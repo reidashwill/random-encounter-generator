@@ -1,4 +1,26 @@
-.col-md-8 {
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@1&display=swap');
+
+.col-md-9 {
   margin-top: 15%;
   padding: 3px;
+}
+
+h4 {
+  font-family: 'IM Fell English', serif;
+}
+
+.form-group {
+  font-family: 'IM Fell English', serif;
+}
+
+p {
+  font-family: 'IM Fell English', serif;
+}
+
+/* * {
+  border: solid red;
+} */
+.container {
+  background-image: url('https://wallpaperaccess.com/full/1886635.jpg');
+  background-repeat: no-repeat;
 }

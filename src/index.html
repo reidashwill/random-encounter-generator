@@ -7,95 +7,98 @@
 </head>
 <body>
   <div class="container">
-    <form id="userInput">
-      <div col-md-4>
-        <h4>Please select your average party level.</h4>
-        <select class="form-control" id="partyLevel">
-          <option>Random</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-        </select>
-        <h4>How many members in the party?</h4>
-        <select class="form-control" id="partyMembers">
-        <option>Random</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-      </select>
-      <h4>How difficult do you want this encounter to be?</h4>
-      <select class="form-control" id="challengeDifficulty">
-        <option>Random</option>
-        <option>Easy</option>
-        <option>Medium</option>
-        <option>Hard</option>
-        <option>Deadly</option>
-      </select>
-      <h4>How many monsters will they be fighting?</h4>
-      <select class="form-control" id="monsterNumber">
-        <option>Any Number</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5+</option>
-      </select>
-      <h4>What size monster would you like your players to face?</h4>
-      <select class="form-control" id="monsterSize">
-        <option>Any Size</option>
-        <option>Tiny</option>
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
-        <option>Huge</option>
-        <option>Gigantic</option>
-      </select>
-      <h4>What type of monster(s) will they face?</h4>
-      <select class="form-control" id="monsterType">
-        <option>Any Type</option>
-        <option>Aberrations</option>
-        <option>Beasts</option>
-        <option>Celestials</option>
-        <option>Constructs</option>
-        <option>Dragons</option>
-        <option>Elementals</option>
-        <option>Fey</option>
-        <option>Fiends</option>
-        <option>Giants</option>
-        <option>Humanoids</option>
-        <option>Monstrosities</option>
-        <option>Oozes</option>
-        <option>Plants</option>
-        <option>Undead</option>
-      </select>
-      <h4>What environment are your players in?</h4>
-      <select class="form-control" id="environment">
-        <option>Any Environment</option>
-        <option>Forest</option>
-      </select>
+    <div class="row">
+      <div col-md-3>  
+        <form id="form-control" class="c-sidebar">
+          <h4>Please select your average party level.</h4>
+          <select class="form-group" id="partyLevel">
+            <option>Random</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+          </select>
+          <h4>How many members in the party?</h4>
+          <select class="form-group" id="partyMembers">
+            <option>Random</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+          </select>
+          <h4>How difficult do you want this encounter to be?</h4>
+          <select class="form-group" id="challengeDifficulty">
+            <option>Random</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+            <option>Deadly</option>
+          </select>
+          <!-- <h4>How many monsters will they be fighting?</h4>
+          <select class="form-group" id="monsterNumber">
+            <option>Any Number</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
+          </select> -->
+          <!-- <h4>What size monster would you like your players to face?</h4>
+          <select class="form-group" id="monsterSize">
+            <option>Any Size</option>
+            <option>Tiny</option>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <option>Huge</option>
+            <option>Gigantic</option>
+          </select> -->
+          <h4>What type of monster(s) will they face?</h4>
+          <select class="form-group" id="monsterType">
+            <option>Any Type</option>
+            <option>Aberrations</option>
+            <option>Beasts</option>
+            <option>Celestials</option>
+            <option>Constructs</option>
+            <option>Dragons</option>
+            <option>Elementals</option>
+            <option>Fey</option>
+            <option>Fiends</option>
+            <option>Giants</option>
+            <option>Humanoids</option>
+            <option>Monstrosities</option>
+            <option>Oozes</option>
+            <option>Plants</option>
+            <option>Undead</option>
+          </select>
+          <h4>What environment are your players in?</h4>
+          <select class="form-group" id="environment">
+            <option>Any Environment</option>
+            <option>Forest</option>
+            <option>Desert</option>
+          </select>
+          <button type="submit" class="btn btn-danger" id="submit">Create Encounter</button>
+        </form>
       </div>
-      <button type="submit" class="btn btn-danger" id="submit">Create Encounter</button>
-    </form>
-    <div class="col-md-8">
-      
+      <div class="col-md-9">
+        <h1>Your Encounter Details</h1>
+      </div>
     </div>
   </div>
 </body>
