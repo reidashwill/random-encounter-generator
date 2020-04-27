@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <div col-md-3>  
+      <div class="col-md-3">  
         <form id="form-control" class="c-sidebar">
           <h4>Please select your average party level.</h4>
           <select class="form-group" id="partyLevel">
@@ -88,10 +88,10 @@
             <option>Undead</option>
           </select>
           <h4>What environment are your players in?</h4>
-          <select class="form-group" id="environment">
-            <option>Any Environment</option>
-            <option>Forest</option>
-            <option>Desert</option>
+          <select class="form-group" id="environment" name="environment">
+            <option value="0">Any Environment</option>
+            <option value="1">Forest</option>
+            <option value="2">Desert</option>
           </select>
           <button type="submit" class="btn btn-danger" id="submit">Create Encounter</button>
         </form>

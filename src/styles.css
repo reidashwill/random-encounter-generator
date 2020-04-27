@@ -13,6 +13,10 @@ h4 {
   font-family: 'IM Fell English', serif;
 }
 
+h4 {
+color: white;
+}
+
 p {
   font-family: 'IM Fell English', serif;
 }
@@ -20,7 +24,8 @@ p {
 /* * {
   border: solid red;
 } */
-.container {
+body {
   background-image: url('https://wallpaperaccess.com/full/1886635.jpg');
   background-repeat: no-repeat;
+  background-size: cover;
 }
