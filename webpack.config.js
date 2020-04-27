@@ -19,7 +19,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv(),
     new HtmlWebpackPlugin({
-      title: '',
+      title: 'random-encounter-generator',
       template: './src/index.html',
       inject: 'body'
     })
