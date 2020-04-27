@@ -11,13 +11,13 @@ export class Encounter {
 
   encounterGen(){
     for(i=0; i<this.xpThreshhold; ++1){
-      let monsterSelectNum = this.randomNumber(10);
-      encounterArray.append(this.possibleMonsterArray[monsterSeclectNum]);
+      let monsterSelectNum = this.randomNumber(possibleMonsterArray.length);
+      encounterArray.push(this.possibleMonsterArray[monsterSeclectNum]);
       this.xpThreshhold -= this.possibleMonsterArray[monsterSeclectNum].xp;
     }
   }
 
-  async getList() {
+ async getList() {
     try {
       let request = await fetch(`https://api.open5e.com/monsters/`);
       if (request.ok && request.status === 200) {
@@ -28,7 +28,7 @@ export class Encounter {
       }
     } catch (error) {
       return false;
-    } 
+    }  
   }
 
   randomNumber(max) {
