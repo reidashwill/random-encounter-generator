@@ -1,14 +1,17 @@
 export class Encounter {
-  constructor(partyLevel, partyNumber, difficulty, xpThreshold) {
+  constructor(partyLevel, partyMembers, challengeDifficulty, xpThreshold, possibleMonsterArray, monsterType, environment) {
     this.partyLevel = partyLevel;
-    this.partyNumber = partyNumber;
-    this.difficulty = difficulty;
+    this.partyMembers = partyMembers;
+    this.challengeDifficulty = challengeDifficulty;
     this.xpThreshold = xpThreshold;
     this.possibleMonsterArray = ["baboon", "badger", "bat", "cat", "commoner", "crab", "deer", "eagle", "frog", "goat"];
-    
+    this.monsterType = monsterType;
+    this.environment = environment;
+    this.forestMonsterArray = ["baboon", "badger", "cat", "commoner", "deer", "hyena", "owl", "bandit", "blood-hawk", "flying-snake", "giant-rat", "giant-weasel", "guard", "kobold", "mastiff", "poisonous-snake", "stirge", "tribal-warrior", "blink-dog", "boar", "constrictor-snake", "elk", "giant-badger", "giant-bat", "giant-frog", "giant-lizard", "giant-owl", "giant-poisonous-snake", "goblin", "panther", "pixie", "pseudodragon", "sprite", "swarm-of-ravens", "wolf", "ape", "black-bear", "giant-wasp", "gnoll", "hobgoblin", "lizardfolk", "orc", "satyr", "scout", "vine-blight", "worg", "brown-bear", "bugbear", "dire-wolf", "dryad", "giant-hyena", "giant-spider", "giant-toad", "harpy", "tiger", "ankheg", "awakened-tree", "bandit-captain", "berserker", "centaur", "druid", "ettercap", "giant-boar", "giant-constrictor-snake", "giant-elk", "grick", "ogre", "pegasus", "swarm-of-poisonous-snakes", "wererat", "will-o-wisp", "green-hag", "owlbear", "phase-spider", "veteran", "werewolf", "couatl", "wereboar", "weretiger", "gorgon", "shambling-mound", "troll", "unicorn", "werebear", "giant-ape", "oni", "young-green-dragon", "treant", "guardian-naga", "young-gold-dragon", "adult-green-dragon", "ancient-green-dragon", "ancient-gold-dragon"}    ];
+    this.desertMonsterArray = ["cat", "commoner", "hyena" ,"jackal", "scorpion", "vulture", "bandit", "camel", "flying-snake", "guard", "kobold", "mule", "poisonous-snake", "stirge", "tribal-warrior", "constrictor-snake", "giant-lizard", "giant", "poisonous-snake", "giant-wolf-spider", "pseudodragon", "winged-kobold", "dust-mephit", "gnoll", "hobgoblin", "jackalwere", "scout", "swarm-of-insects", "death-dog", "giant-hyena", "giant-spider", "giant-toad", "giant-vulture", "half-ogre", "lion", "bandit-captain", "beserker", "druid", "giant-constrictor-snake", "ogre", "giant-scorpion", "mummy", "phase-spider", "wight", "weretiger", "air-elemental", "fire-elemental", "revenant", "medusa", "young-brass-dragon", "young-blue-dragon", "guardian-naga", "efreeti", "gynosphinx", "roc", "adult-brass-dragon", "mummy-lord", "purple-worm", "adult-blue-dragon", "androsphinx", ]
+    this.grasslandMonsterArray = []
   }
   
-
 
 
   encounterGen(){
@@ -19,11 +22,12 @@ export class Encounter {
     }
   }
 
- async getList() {
+  async getList(url) {
     try {
-      let request = await fetch(`https://api.open5e.com/monsters/`);
+      let request = await fetch(url);
       if (request.ok && request.status === 200) {
         let list = await request.json();
+        console.log(list);
         return list;
       } else {
         request = false;
@@ -36,7 +40,7 @@ export class Encounter {
   randomNumber(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
-  partyxpThreshold(partyLevel, difficulty){
+  partyxpThreshold(partyLevel, challengeDifficulty){
     const threshholdArray = [[],
       [25, 50, 75, 100],
       [50, 100, 150, 200],
@@ -59,7 +63,7 @@ export class Encounter {
       [2400, 4900, 7300, 10900],
       [2800, 5700, 8500, 12700]
     ];
-    this.xpThreshold = this.partyNumber * threshholdArray[partyLevel][difficulty];
+    this.xpThreshold = this.partyMembers * threshholdArray[partyLevel][challengeDifficulty];
   }
 
 
