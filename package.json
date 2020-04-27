@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "random-encounter-generator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "debug": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "keywords": [],
-  "author": "Reid Ashwill",
+  "author": "Reid Ashwill, Mark Gridley, Tyler Bates, Tyler Bowerman, Daniel Merys",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.6.4",
