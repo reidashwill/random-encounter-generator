@@ -3,6 +3,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import $ from "jquery";
 
+import { Encounter } from './src/bizz.js';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function () {
   let environment = $("#environment").val();
   $("input#environment:checked").click(function() {
@@ -34,3 +52,4 @@ $(document).ready(function () {
 
 
 // You will be facing ${ monsterNumber } monsters.
+
