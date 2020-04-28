@@ -89,17 +89,45 @@
           </select>
           <h4>What environment are your players in?</h4>
           <select class="form-group" id="environment" name="environment">
-            <option value="0">Any Environment</option>
-            <option value="1">Forest</option>
-            <option value="2">Desert</option>
+            <option value="default">Any Environment</option>
+            <option value="arcticEncounter">Arctic</option>
+            <option value="coastalEncounter">Coastal</option>
+            <option value="desertEncounter">Desert</option>
+            <option value="forestEncounter">Forest</option>
+            <option value="grasslandEncounter">Grassland</option>
+            <option value="hillEncounter">Hill</option>
+            <option value="mountainEncounter">Mountain</option>
+            <option value="swampEncounter">Swamp</option>
+            <option value="underdarkEncounter">Underdark</option>
+            <option value="underwaterEncounter">Underwater</option>
+            <option value="urbanEncounter">Urban</option>
           </select>
           <button type="submit" class="btn btn-danger" id="submit">Create Encounter</button>
         </form>
       </div>
       <div class="col-md-9">
-        <h1>Your Encounter Details</h1>
+        <div class="results animated bounceInDown">
+          <div class="typewriter">
+            <h1>Your Encounter Details</h1>
+            <table class="table table.striped">
+              <thead>
+                <tr>
+                  <th>Monster Name</th>
+                  <th>Challenge Rating</th>
+                </tr>
+                <tr>
+                  <td class="table"></td>
+                  <td></td>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <audio autoplay preload='auto' loop id="myAudio">
+    <source src="" type="audio/mpeg" >
+  </audio>
 </body>
 </html>
