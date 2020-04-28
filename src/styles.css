@@ -1,31 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@1&display=swap');
 
-.col-md-9 {
-  margin-top: 15%;
-  padding: 3px;
+body {
+  background-image: url('https://wallpaperaccess.com/full/1886635.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-h4 {
-  font-family: 'IM Fell English', serif;
+.col-md-9 {
+  color: white;
+  margin-top: 5%;
+  padding: 3px;
 }
 
 .form-group {
   font-family: 'IM Fell English', serif;
 }
+.table {
+  color: white;
+  font-family: 'IM Fell English', serif;
+}
+
+h1 {
+  color: white;
+  font-family: 'IM Fell English', serif;
+  text-align: center;
+}
 
 h4 {
-color: white;
+  font-family: 'IM Fell English', serif;
+  color: white;
 }
 
 p {
   font-family: 'IM Fell English', serif;
 }
-
-/* * {
-  border: solid red;
+.results{
+  display: none;
+}
+.typewriter{
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15;
+  animation: 
+    typing 3s steps(150, end);
+}
+@keyframes typing {
+  from {width:0}
+  to {width:100%}
+}
+/* .typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15;
+  animation: 
+    typing 6s steps(100, end);
+}
+@keyframes typing {
+  from {width:0}
+  to {width:100%}
 } */
-body {
-  background-image: url('https://wallpaperaccess.com/full/1886635.jpg');
+.animated {
+  -webkit-animation-duration: 4s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+  }
+  100% { 
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+     transform: translateY(-2000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    80% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+.results {
+  background-image: url("");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
 }
