@@ -8,8 +8,8 @@ import { Encounter } from './../src/bizz.js';
 
 $(document).ready(function () {
 
-  const aud = document.getElementById("myAudio");
-  aud.volume = 0.5; // default 1 means 100%
+  // const aud = document.getElementById("myAudio");
+  // aud.volume = 0.5; // default 1 means 100%
   //changes background image upon selection of environment
   $('#environment').change(function () {
     let selectedValue = ($(this).val());
@@ -106,6 +106,10 @@ $(document).ready(function () {
 
   $("#form-control").submit(function (event) {
     event.preventDefault();
+    $(".results").show();
+    $("#form-control").fadeOut(200);
+    let sound = new Audio("");
+    sound.play();
     (async () => {
       let encounter = new Encounter;
       console.log("test");
@@ -116,6 +120,8 @@ $(document).ready(function () {
       encounter.monsterSize = $("#monsterSize").val();
       encounter.monsterType = $("#monsterType").val();
       encounter.environment = $("#environment").val();
+      encounter.partyXpThreshold(encounter.partyMembers, encounter.partyLevel, encounter.challengeDifficulty);
+      console.log(encounter);
       encounter.encounterGen();
     })();
   });

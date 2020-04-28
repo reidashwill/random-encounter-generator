@@ -40,6 +40,7 @@ export class Encounter {
     }
   }
 
+
   encounterGen() {
     this.environmentArray = [];
     // console.log("EnvironmentGen start test")
@@ -89,8 +90,7 @@ export class Encounter {
         this.getMonster(this.urbanMonsterArray[i]);
       }
     }
-
-    for (let i = 0; i < this.xpThreshold;) {
+    for (let i = 0; i <this.xpThreshold;) {
       let monsterSelectNum = this.randomNumber(this.currentEnvironmentArray.length - 1);
       this.environmentArray.push(this.currentEnvironmentArray[monsterSelectNum]);
       this.xpThreshold -= this.currentEnvironmentArray[monsterSelectNum].xp;
@@ -102,8 +102,8 @@ export class Encounter {
   randomNumber(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
-  partyxpThreshold(partyLevel, challengeDifficulty) {
-    const threshholdArray = [[],
+  partyXpThreshold(partyMembers, challengeDifficulty, partyLevel) {
+    const thresholdArray = [[],
       [25, 50, 75, 100],
       [50, 100, 150, 200],
       [75, 150, 225, 400],
@@ -125,7 +125,8 @@ export class Encounter {
       [2400, 4900, 7300, 10900],
       [2800, 5700, 8500, 12700]
     ];
-    this.xpThreshold = this.partyMembers * threshholdArray[partyLevel][challengeDifficulty];
+    this.xpThreshold = partyMembers * thresholdArray[partyLevel][challengeDifficulty];
+    console.log(this.xpThreshold);
   }
 
 

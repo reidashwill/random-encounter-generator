@@ -13,34 +13,34 @@
           <h4>Please select your average party level.</h4>
           <select class="form-group" id="partyLevel">
             <option>Random</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
           </select>
           <h4>How many members in the party?</h4>
           <select class="form-group" id="partyMembers">
             <option>Random</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
           </select>
           <h4>How difficult do you want this encounter to be?</h4>
           <select class="form-group" id="challengeDifficulty">
@@ -106,14 +106,15 @@
         </form>
       </div>
       <div class="col-md-9">
-        <div class="results animated bounceInDown">
+        <div class="results animated fadeIn">
           <div class="typewriter">
-            <h1>Your Encounter Details</h1>
-            <table class="table table.striped">
+            <h1 class="printOff">Your Encounter Details</h1>
+            <table class="table table.striped" >
               <thead>
                 <tr>
                   <th>Monster Name</th>
                   <th>Challenge Rating</th>
+                  <img id="scroll" src="https://i.imgur.com/bkomnzC.png" alt="scroll">
                 </tr>
                 <tr>
                   <td class="table"></td>
@@ -122,12 +123,16 @@
               </thead>
             </table>
           </div>
+          <button onclick="(window.location.reload())" class="btn-animated" id="resetButton">Try Again</button>
         </div>
       </div>
     </div>
   </div>
-  <audio autoplay preload='auto' loop id="myAudio">
-    <source src="" type="audio/mpeg" >
-  </audio>
+  <div class="music">
+  <!-- <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809321608&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/tyler-bates-551395374" title="tytyhibye" target="_blank" style="color: #cccccc; text-decoration: none;">tytyhibye</a> · <a href="https://soundcloud.com/tyler-bates-551395374/backroundmusic" title="Backroundmusic" target="_blank" style="color: #cccccc; text-decoration: none;">Backroundmusic</a></div> -->
+  </div>
+  <!-- <audio autoplay preload='auto' loop id="myAudio">
+    <source src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809321608" type="audio/mpeg" >
+  </audio> -->
 </body>
 </html>
