@@ -38,47 +38,47 @@ export class Encounter {
 
   encounterGen() {
     this.encounterArray = [];
-    if(this.environemt === "forestEnvironment"){
+    if(this.environment === "forestEncounter"){
       for(let i =0; i<=this.forestMonsterArray.length; i++){
         this.getMonster(this.forestMonsterArray[i]);
       }
-    }else if(this.enviroment === "desertEnvironment"){
+    }else if(this.environment === "desertEncounter"){
       for(let i=0; i<=this.desertMonsterArray.length; i++){
         this.getMonster(this.desertMonsterArray[i]);
       }
-    }else if(this.environment === "hillEnvironment"){
+    }else if(this.environment === "hillEncounter"){
       for(let i=0; i<=this.hillMonsterArray.length; i++){
         this.getMonster(this.hillMonsterArray[i]);
       }
-    }else if(this.environment === "grasslandEnvironment"){
+    }else if(this.environment === "grasslandEncounter"){
       for(let i=0; i<=this.this.grasslandMonsterArray.length; i++){
         this.getMonster(this.grasslandMonsterArray);
       }
-    }else if(this.environment === "mountainEnvironment"){
+    }else if(this.environment === "mountainEncounter"){
       for(let i=0; i<=this.this.mountainMonsterArray.length; i++){
         this.getMonster(this.mountainMonsterArray);
       }
-    }else if(this.environment === "arcticEnvironment"){
+    }else if(this.environment === "arcticEncounter"){
       for(let i=0; i<=this.this.arcticMonsterArray.length; i++){
         this.getMonster(this.arcticMonsterArray);
       }
-    }else if(this.environement === "coastalEnvironment"){
+    }else if(this.environment === "coastalEncounter"){
       for(let i=0; i<=this.this.coastalMonsterArray.length; i++){
         this.getMonster(this.coastalMonsterArray);
       }
-    }else if(this.environment === "swampEnvironment"){
+    }else if(this.environment === "swampEncounter"){
       for(let i =0; i<=this.swampMonsterArray.length; i++){
         this.getMonster(this.swampMonsterArray[i]);
       }
-    }else if(this.environment === "underdarkEnvironment"){
+    }else if(this.environment === "underdarkEncounter"){
       for(let i =0; i<=this.underdarkMonsterArray.length; i++){
         this.getMonster(this.underdarkMonsterArray[i]);
       }
-    }else if(this.environment === "underwaterEnvironment"){
+    }else if(this.environment === "underwaterEncounter"){
       for(let i =0; i<=this.underwaterMonsterArray.length; i++){
         this.getMonster(this.underwaterMonsterArray[i]);
       }
-    }else if(this.environment === "urbanEnvironment"){
+    }else if(this.environment === "urbanEncounter"){
       for(let i =0; i<=this.urbanMonsterArray.length; i++){
         this.getMonster(this.urbanMonsterArray[i]);
       }
