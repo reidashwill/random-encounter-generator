@@ -4,7 +4,6 @@ export class Encounter {
     this.partyMembers = partyMembers;
     this.challengeDifficulty = challengeDifficulty;
     this.xpThreshold = xpThreshold;
-    this.possibleMonsterArray = ["baboon", "badger", "bat", "cat", "commoner", "crab", "deer", "eagle", "frog", "goat"];
     this.monsterType = monsterType;
     this.environment = environment;
     this.forestMonsterArray = ["baboon", "badger", "cat", "commoner", "deer", "hyena", "owl", "bandit", "blood-hawk", "flying-snake", "giant-rat", "giant-weasel", "guard", "kobold", "mastiff", "poisonous-snake", "stirge", "tribal-warrior", "blink-dog", "boar", "constrictor-snake", "elk", "giant-badger", "giant-bat", "giant-frog", "giant-lizard", "giant-owl", "giant-poisonous-snake", "goblin", "panther", "pixie", "pseudodragon", "sprite", "swarm-of-ravens", "wolf", "ape", "black-bear", "giant-wasp", "gnoll", "hobgoblin", "lizardfolk", "orc", "satyr", "scout", "vine-blight", "worg", "brown-bear", "bugbear", "dire-wolf", "dryad", "giant-hyena", "giant-spider", "giant-toad", "harpy", "tiger", "ankheg", "awakened-tree", "bandit-captain", "berserker", "centaur", "druid", "ettercap", "giant-boar", "giant-constrictor-snake", "giant-elk", "grick", "ogre", "pegasus", "swarm-of-poisonous-snakes", "wererat", "will-o-wisp", "green-hag", "owlbear", "phase-spider", "veteran", "werewolf", "couatl", "wereboar", "weretiger", "gorgon", "shambling-mound", "troll", "unicorn", "werebear", "giant-ape", "oni", "young-green-dragon", "treant", "guardian-naga", "young-gold-dragon", "adult-green-dragon", "ancient-green-dragon", "ancient-gold-dragon"];
@@ -21,22 +20,14 @@ export class Encounter {
   }
 
 
-
-  encounterGen() {
-    for (let i = 0; i < this.xpThreshold; i++) {
-      let monsterSelectNum = this.randomNumber(this.possibleMonsterArray.length);
-      this.encounterArray.push(this.possibleMonsterArray[monsterSelectNum]);
-      this.xpThreshold -= this.possibleMonsterArray[monsterSelectNum].xp;
-    }
-  }
-
-  async getList(url) {
+  async getMonster(monsterPlaceholder) {
     try {
-      let request = await fetch(url);
+      let request = await fetch(`https://api.open5e.com/monsters/${monsterPlaceholder}`);
       if (request.ok && request.status === 200) {
-        let list = await request.json();
-        console.log(list);
-        return list;
+        let monsterObject = await request.json();
+        console.log(monsterObject);
+        this.monsterXpConverter(monsterObject);
+        this.currentEnvironmentArray.push(monsterObject);
       } else {
         request = false;
       }
@@ -44,6 +35,63 @@ export class Encounter {
       return false;
     }  
   }
+
+  encounterGen() {
+    this.encounterArray = [];
+    if(this.environemt === "forestEnvironment"){
+      for(let i =0; i<=this.forestMonsterArray.length; i++){
+        this.getMonster(this.forestMonsterArray[i]);
+      }
+    }else if(this.enviroment === "desertEnvironment"){
+      for(let i=0; i<=this.desertMonsterArray.length; i++){
+        this.getMonster(this.desertMonsterArray[i]);
+      }
+    }else if(this.environment === "hillEnvironment"){
+      for(let i=0; i<=this.hillMonsterArray.length; i++){
+        this.getMonster(this.hillMonsterArray[i]);
+      }
+    }else if(this.environment === "grasslandEnvironment"){
+      for(let i=0; i<=this.this.grasslandMonsterArray.length; i++){
+        this.getMonster(this.grasslandMonsterArray);
+      }
+    }else if(this.environment === "mountainEnvironment"){
+      for(let i=0; i<=this.this.mountainMonsterArray.length; i++){
+        this.getMonster(this.mountainMonsterArray);
+      }
+    }else if(this.environment === "arcticEnvironment"){
+      for(let i=0; i<=this.this.arcticMonsterArray.length; i++){
+        this.getMonster(this.arcticMonsterArray);
+      }
+    }else if(this.environement === "coastalEnvironment"){
+      for(let i=0; i<=this.this.coastalMonsterArray.length; i++){
+        this.getMonster(this.coastalMonsterArray);
+      }
+    }else if(this.environment === "swampEnvironment"){
+      for(let i =0; i<=this.swampMonsterArray.length; i++){
+        this.getMonster(this.swampMonsterArray[i]);
+      }
+    }else if(this.environment === "underdarkEnvironment"){
+      for(let i =0; i<=this.underdarkMonsterArray.length; i++){
+        this.getMonster(this.underdarkMonsterArray[i]);
+      }
+    }else if(this.environment === "underwaterEnvironment"){
+      for(let i =0; i<=this.underwaterMonsterArray.length; i++){
+        this.getMonster(this.underwaterMonsterArray[i]);
+      }
+    }else if(this.environment === "urbanEnvironment"){
+      for(let i =0; i<=this.urbanMonsterArray.length; i++){
+        this.getMonster(this.urbanMonsterArray[i]);
+      }
+    }
+
+    for (let i = 0; i < this.xpThreshold;) {
+      let monsterSelectNum = this.randomNumber(this.currentEnvironmentArray.length -1);
+      this.encounterArray.push(this.currentEnvironmentArray[monsterSelectNum]);
+      this.xpThreshold -= this.currentEnvironmentArray[monsterSelectNum].xp;
+    }
+  }
+
+  
 
   randomNumber(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -75,8 +123,8 @@ export class Encounter {
   }
 
 
-  monsterXpConverter(placeholder) {
-    if(this.results.placeholder.challenge_rating === "0"){
+  monsterXpConverter() {
+    if(this.challenge_rating === "0"){
       this.xp = 10;
     }else if(this.challenge_rating ==="1/8"){
       this.xp = 25;
@@ -137,4 +185,3 @@ export class Encounter {
     }
   }
 }
-
