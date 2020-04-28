@@ -41,7 +41,7 @@ $(document).ready(function () {
     
     (async () => {
       let encounter = new Encounter;
-      let response = await encounter.getList(`https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=ooze`);
+      let response = await encounter.getMonster(`https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=ooze`);
       let index = encounter.randomNumber(parseInt(response.length));
       let name = response[index].results.name;
       console.log(index);
