@@ -104,8 +104,3 @@ p {
   -webkit-animation-name: bounceInDown;
   animation-name: bounceInDown;
 }
-.results {
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: auto;
-}
