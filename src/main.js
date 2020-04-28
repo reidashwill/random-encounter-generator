@@ -7,7 +7,7 @@ import { Encounter } from './../src/bizz.js';
 
 
 $(document).ready(function () {
-  let encounter = new Encounter;
+
   const aud = document.getElementById("myAudio");
   aud.volume = 0.5; // default 1 means 100%
   //changes background image upon selection of environment
@@ -17,37 +17,37 @@ $(document).ready(function () {
     case "default":
       defaultBg();
       break;
-    case "arcticEncounter":
+    case "arcticEnvironment":
       arcticBg();
       break;
-    case "coastalEncounter":
+    case "coastalEnvironment":
       coastalBg();
       break;
-    case "desertEncounter":
+    case "desertEnvironment":
       desertBg();
       break;
-    case "forestEncounter":
+    case "forestEnvironment":
       forestBg();
       break;
-    case "grasslandEncounter":
+    case "grasslandEnvironment":
       grasslandBg();
       break;
-    case "hillEncounter":
+    case "hillEnvironment":
       hillBg();
       break;
-    case "mountainEncounter":
+    case "mountainEnvironment":
       mountainBg();
       break;
-    case "swampEncounter":
+    case "swampEnvironment":
       swampBg();
       break;
-    case "underdarkEncounter":
+    case "underdarkEnvironment":
       underdarkBg();
       break;
-    case "underwaterEncounter":
+    case "underwaterEnvironment":
       underwaterBg();
       break;
-    case "urbanEncounter":
+    case "urbanEnvironment":
       urbanBg();
       break;
     }
@@ -106,14 +106,9 @@ $(document).ready(function () {
 
   $("#form-control").submit(function (event) {
     event.preventDefault();
-    
     (async () => {
       let encounter = new Encounter;
-      let response = await encounter.getMonster(`https://api.open5e.com/monsters/?challenge_rating=&armor_class=&type=ooze`);
-      let index = encounter.randomNumber(parseInt(response.length));
-      let name = response[index].results.name;
-      console.log(index);
-      console.log(name);
+      console.log("test");
       encounter.partyLevel = $("#partyLevel").val();
       encounter.partyMembers = $("#partyMembers").val();
       encounter.challengeDifficulty = $("#challengeDifficulty").val();
@@ -121,6 +116,7 @@ $(document).ready(function () {
       encounter.monsterSize = $("#monsterSize").val();
       encounter.monsterType = $("#monsterType").val();
       encounter.environment = $("#environment").val();
+      encounter.encounterGen();
     })();
   });
 });
