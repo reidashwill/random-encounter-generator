@@ -1,5 +1,5 @@
 export class Encounter {
-  constructor(partyLevel, partyMembers, challengeDifficulty, xpThreshold, monsterType, environment, currentEnvironmentArray) {
+  constructor(partyLevel, partyMembers, challengeDifficulty, xpThreshold, monsterType, environment, currentEnvironmentArray, monsterXpPool) {
     this.partyLevel = partyLevel;
     this.partyMembers = partyMembers;
     this.challengeDifficulty = challengeDifficulty;
@@ -7,6 +7,7 @@ export class Encounter {
     this.monsterType = monsterType;
     this.environment = environment;
     this.currentEnvironmentArray = [];
+    this.monsterXpPool = monsterXpPool;
     this.forestMonsterArray = ["baboon", "badger", "cat", "commoner", "deer", "hyena", "owl", "bandit", "blood-hawk", "flying-snake", "giant-rat", "giant-weasel", "guard", "kobold", "mastiff", "poisonous-snake", "stirge", "tribal-warrior", "blink-dog", "boar", "constrictor-snake", "elk", "giant-badger", "giant-bat", "giant-frog", "giant-lizard", "giant-owl", "giant-poisonous-snake", "goblin", "panther", "pseudodragon", "sprite", "swarm-of-ravens", "wolf", "ape", "black-bear", "giant-wasp", "gnoll", "hobgoblin", "lizardfolk", "orc", "satyr", "scout", "worg", "brown-bear", "bugbear", "dire-wolf", "dryad", "giant-hyena", "giant-spider", "giant-toad", "harpy", "tiger", "ankheg", "awakened-tree", "bandit-captain", "berserker", "centaur", "druid", "ettercap", "giant-boar", "giant-constrictor-snake", "giant-elk", "grick", "ogre", "pegasus", "swarm-of-poisonous-snakes", "wererat", "will-o-wisp", "green-hag", "owlbear", "phase-spider", "veteran", "werewolf", "couatl", "wereboar", "weretiger", "gorgon", "shambling-mound", "troll", "unicorn", "werebear", "giant-ape", "oni", "young-green-dragon", "treant", "guardian-naga", "young-gold-dragon", "adult-green-dragon", "ancient-green-dragon", "ancient-gold-dragon"];
     this.desertMonsterArray = ["cat", "commoner", "hyena", "jackal", "scorpion", "vulture", "bandit", "camel", "flying-snake", "guard", "kobold", "mule", "poisonous-snake", "stirge", "tribal-warrior", "constrictor-snake", "giant-lizard", "poisonous-snake", "giant-wolf-spider", "pseudodragon", "dust-mephit", "gnoll", "hobgoblin", "scout", "swarm-of-insects", "death-dog", "giant-hyena", "giant-spider", "giant-toad", "giant-vulture", "lion", "bandit-captain", "druid", "giant-constrictor-snake", "ogre", "giant-scorpion", "mummy", "phase-spider", "wight", "weretiger", "air-elemental", "fire-elemental", "medusa", "young-brass-dragon", "young-blue-dragon", "guardian-naga", "efreeti", "gynosphinx", "roc", "adult-brass-dragon", "mummy-lord", "purple-worm", "adult-blue-dragon", "androsphinx", "ancient-brass-dragon", "ancient-blue-dragon"];
     this.hillMonsterArray = ["baboon", "commoner", "eagle", "goat", "hyena", "raven", "vulture", "bandit", "blood-hawk", "giant-weasel", "guard", "kobold", "mastiff", "mule", "poisonous-snake", "stirge", "tribal-warrior", "axe-beak", "boar", "elk", "giant-owl", "giant-wolf-spider", "goblin", "panther", "pseudodragon", "swarm-of-bats", "swarm-of-ravens", "wolf", "giant-goat", "gnoll", "hobgoblin", "orc", "scout", "swarm-of-insects", "worg", "brown-bear", "dire-wolf", "giant-eagle", "giant-hyena", "harpy", "hippogriff", "berserker", "druid", "giant-boar", "giant-elk", "griffon", "ogre", "orc", "pegasus", "green-hag", "manticore", "phase-spider", "veteran", "werewolf", "ettin", "wereboar", "bulette", "gorgon", "hill-giant", "troll", "werebear", "chimera", "wyvern", "stone-giant", "young-copper-dragon", "young-red-dragon", "roc", "adult-copper-dragon", "adult-red-dragon", "ancient-copper-dragon", "ancient-red-dragon"];
@@ -90,16 +91,34 @@ export class Encounter {
         await this.getMonster(this.urbanMonsterArray[i]);
       }
     }
+
     for (let i = 0; i <this.xpThreshold;) {
-      console.log(this.currentEnvironmentArray);
+      this.monsterXpPool = 0
+      console.log("currentEnvironmentArray", this.currentEnvironmentArray);
       let monsterSelectNum = this.randomNumber(this.currentEnvironmentArray.length);
-      console.log(monsterSelectNum);
+      console.log("monsterSelectNum", monsterSelectNum);
       console.log(this.currentEnvironmentArray[monsterSelectNum].xp);
       if (this.currentEnvironmentArray[monsterSelectNum].xp < this.xpThresholdBuffer){
         this.encounterArray.push(this.currentEnvironmentArray[monsterSelectNum]);
+        for (i=0; i < this.encounterArray.length; i++){
+          this.monsterXpPool += this.encounterArray[i].xp;
+        }
         console.log(this.encounterArray);
-        this.xpThreshold -= this.currentEnvironmentArray[monsterSelectNum].xp;
-        console.log(this.xpThreshold);
+        if ( this.encounterArray.length >= 15) {
+          this.monsterXpPool *= 4;
+        }else if( this.encounterArray.length >= 11){
+          this.monsterXpPool *= 3;
+        }else if( this.encounterArray.length >= 7){
+          this.monsterXpPool *= 2.5;
+        }else if( this.encounterArray.length >= 3){
+          this.monsterXpPool *=2;
+        }else if( this.encounterArray.length === 2){
+          this.monsterXpPool *= 1.5;
+        }
+        console.log("monsterXpPool", this.monsterXpPool);
+        
+        this.xpThreshold -= this.monsterXpPool
+        console.log("xpThreshold", this.xpThreshold);
       }
     }
   }
@@ -134,7 +153,7 @@ export class Encounter {
     this.xpThreshold = partyMembers * thresholdArray[partyLevel][challengeDifficulty];
     // console.log(this.xpThreshold);
     this.xpThresholdBuffer = (this.xpThreshold / 4)
-    console.log(this.xpThresholdBuffer);
+    console.log("xpThresholdBuffer", this.xpThresholdBuffer);
   }
 
 
