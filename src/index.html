@@ -12,7 +12,7 @@
         <form id="form-control" class="c-sidebar">
           <h4>Please select your average party level.</h4>
           <select class="form-group" id="partyLevel">
-            <option>Random</option>
+            <!-- <option>Random</option> -->
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -36,7 +36,7 @@
           </select>
           <h4>How many members in the party?</h4>
           <select class="form-group" id="partyMembers">
-            <option>Random</option>
+            <!-- <option>Random</option> -->
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
@@ -44,52 +44,32 @@
           </select>
           <h4>How difficult do you want this encounter to be?</h4>
           <select class="form-group" id="challengeDifficulty">
-            <option>Random</option>
-            <option>Easy</option>
-            <option>Medium</option>
-            <option>Hard</option>
-            <option>Deadly</option>
+            <!-- <option>Random</option> -->
+            <option value="0">Easy</option>
+            <option value="1">Medium</option>
+            <option value="2">Hard</option>
+            <option value="3">Deadly</option>
           </select>
-          <!-- <h4>How many monsters will they be fighting?</h4>
-          <select class="form-group" id="monsterNumber">
-            <option>Any Number</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5+</option>
-          </select> -->
-          <!-- <h4>What size monster would you like your players to face?</h4>
-          <select class="form-group" id="monsterSize">
-            <option>Any Size</option>
-            <option>Tiny</option>
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
-            <option>Huge</option>
-            <option>Gigantic</option>
-          </select> -->
           <h4>What type of monster(s) will they face?</h4>
           <select class="form-group" id="monsterType">
-            <option>Any Type</option>
-            <option>Aberrations</option>
-            <option>Beasts</option>
-            <option>Celestials</option>
-            <option>Constructs</option>
-            <option>Dragons</option>
-            <option>Elementals</option>
-            <option>Fey</option>
-            <option>Fiends</option>
-            <option>Giants</option>
-            <option>Humanoids</option>
-            <option>Monstrosities</option>
-            <option>Oozes</option>
-            <option>Plants</option>
-            <option>Undead</option>
+            <option value="aberration">Aberrations</option>
+            <option value="beast">Beasts</option>
+            <option value="celestial">Celestials</option>
+            <option value="construct">Constructs</option>
+            <option value="dragon">Dragons</option>
+            <option value="elementals">Elementals</option>
+            <option value="fey">Fey</option>
+            <option value="fiends">Fiends</option>
+            <option value="giants">Giants</option>
+            <option value="humanoids">Humanoids</option>
+            <option value="monstrosities">Monstrosities</option>
+            <option value="oozes">Oozes</option>
+            <option value="plants">Plants</option>
+            <option value="undead">Undead</option>
           </select>
           <h4>What environment are your players in?</h4>
           <select class="form-group" id="environment" name="environment">
-            <option value="default">Any Environment</option>
+            <!-- <option value="default">Any Environment</option> -->
             <option value="arcticEnvironment">Arctic</option>
             <option value="coastalEnvironment">Coastal</option>
             <option value="desertEnvironment">Desert</option>
@@ -128,9 +108,11 @@
       </div>
     </div>
   </div>
-  <div class="music">
+  <!-- <div class="music">
   <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809321608&auto_play=true"></iframe>
-  </div>
+  </div> -->
+
+
   <!-- <audio autoplay preload='auto' loop id="myAudio">
     <source src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809321608" type="audio/mpeg" >
   </audio> -->
