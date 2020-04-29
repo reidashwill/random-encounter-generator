@@ -103,7 +103,7 @@ export class Encounter {
         for (i=0; i < this.encounterArray.length; i++){
           this.monsterXpPool += this.encounterArray[i].xp;
         }
-        console.log(this.encounterArray);
+        console.log("actual encounter array:", this.encounterArray);
         if ( this.encounterArray.length >= 15) {
           this.monsterXpPool *= 4;
         }else if( this.encounterArray.length >= 11){

@@ -119,7 +119,7 @@ $(document).ready(function () {
       encounter.partyXpThreshold(encounter.partyMembers, encounter.challengeDifficulty, encounter.partyLevel);
       // console.log(encounter);
       encounter.encounterGen();
-      console.log(encounter.encounterArray)
+      console.log(encounter.encounterArray[1].slug)
     })();
   });
 });
