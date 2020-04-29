@@ -3,7 +3,7 @@ export class Encounter {
     this.partyLevel = partyLevel;
     this.partyMembers = partyMembers;
     this.challengeDifficulty = challengeDifficulty;
-    this.xpThreshold = xpThreshold;
+    this.xpThreshold = 0;
     this.monsterType = monsterType;
     this.environment = environment;
     this.currentEnvironmentArray = [];
@@ -27,10 +27,10 @@ export class Encounter {
       if (request.ok && request.status === 200) {
         let monsterObject = await request.json();
         monsterObject.xp = 0;
-        console.log(monsterObject);
+        // console.log(monsterObject);
         this.monsterXpConverter(monsterObject);
         this.currentEnvironmentArray.push(monsterObject);
-        console.log(this.currentEnvironmentArray);
+        // console.log(this.currentEnvironmentArray);
 
       } else {
         request = false;
@@ -41,66 +41,72 @@ export class Encounter {
   }
 
 
-  encounterGen() {
-    this.environmentArray = [];
+  async encounterGen() {
+    this.encounterArray = [];
     // console.log("EnvironmentGen start test")
     if (this.environment === "forestEnvironment") {
       // console.log("environment test")
       for (let i = 0; i <= this.forestMonsterArray.length - 1; i++) {
-        this.getMonster(this.forestMonsterArray[i]);
+        await this.getMonster(this.forestMonsterArray[i]);
       }
     } else if (this.environment === "desertEnvironment") {
       for (let i = 0; i <= this.desertMonsterArray.length - 1; i++) {
-        this.getMonster(this.desertMonsterArray[i]);
+        await this.getMonster(this.desertMonsterArray[i]);
       }
     } else if (this.environment === "hillEnvironment") {
       for (let i = 0; i <= this.hillMonsterArray.length - 1; i++) {
-        this.getMonster(this.hillMonsterArray[i]);
+        await this.getMonster(this.hillMonsterArray[i]);
       }
     } else if (this.environment === "grasslandEnvironment") {
       for (let i = 0; i <= this.grasslandMonsterArray.length - 1; i++) {
-        this.getMonster(this.grasslandMonsterArray[i]);
+        await this.getMonster(this.grasslandMonsterArray[i]);
       }
     } else if (this.environment === "mountainEnvironment") {
       for (let i = 0; i <= this.mountainMonsterArray.length - 1; i++) {
-        this.getMonster(this.mountainMonsterArray[i]);
+        await this.getMonster(this.mountainMonsterArray[i]);
       }
     } else if (this.environment === "arcticEnvironment") {
       for (let i = 0; i <= this.arcticMonsterArray.length - 1; i++) {
-        this.getMonster(this.arcticMonsterArray[i]);
+        await this.getMonster(this.arcticMonsterArray[i]);
       }
     } else if (this.environment === "coastalEnvironment") {
       for (let i = 0; i <= this.coastalMonsterArray.length - 1; i++) {
-        this.getMonster(this.coastalMonsterArray[i]);
+        await this.getMonster(this.coastalMonsterArray[i]);
       }
     } else if (this.environment === "swampEnvironment") {
       for (let i = 0; i <= this.swampMonsterArray.length - 1; i++) {
-        this.getMonster(this.swampMonsterArray[i]);
+        await this.getMonster(this.swampMonsterArray[i]);
       }
     } else if (this.environment === "underdarkEnvironment") {
       for (let i = 0; i <= this.underdarkMonsterArray.length - 1; i++) {
-        this.getMonster(this.underdarkMonsterArray[i]);
+        await this.getMonster(this.underdarkMonsterArray[i]);
       }
     } else if (this.environment === "underwaterEnvironment") {
       for (let i = 0; i <= this.underwaterMonsterArray.length - 1; i++) {
-        this.getMonster(this.underwaterMonsterArray[i]);
+        await this.getMonster(this.underwaterMonsterArray[i]);
       }
     } else if (this.environment === "urbanEnvironment") {
       for (let i = 0; i <= this.urbanMonsterArray.length - 1; i++) {
-        this.getMonster(this.urbanMonsterArray[i]);
+        await this.getMonster(this.urbanMonsterArray[i]);
       }
     }
     for (let i = 0; i <this.xpThreshold;) {
-      let monsterSelectNum = this.randomNumber(this.currentEnvironmentArray.length - 1);
-      this.environmentArray.push(this.currentEnvironmentArray[monsterSelectNum]);
-      this.xpThreshold -= this.currentEnvironmentArray[monsterSelectNum].xp;
+      console.log(this.currentEnvironmentArray);
+      let monsterSelectNum = this.randomNumber(this.currentEnvironmentArray.length);
+      console.log(monsterSelectNum);
+      console.log(this.currentEnvironmentArray[monsterSelectNum].xp);
+      if (this.currentEnvironmentArray[monsterSelectNum].xp < this.xpThresholdBuffer){
+        this.encounterArray.push(this.currentEnvironmentArray[monsterSelectNum]);
+        console.log(this.encounterArray);
+        this.xpThreshold -= this.currentEnvironmentArray[monsterSelectNum].xp;
+        console.log(this.xpThreshold);
+      }
     }
   }
 
 
-
   randomNumber(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+    return Math.floor(Math.random() * max)
   }
   partyXpThreshold(partyMembers, challengeDifficulty, partyLevel) {
     const thresholdArray = [[],
@@ -126,12 +132,14 @@ export class Encounter {
       [2800, 5700, 8500, 12700]
     ];
     this.xpThreshold = partyMembers * thresholdArray[partyLevel][challengeDifficulty];
-    console.log(this.xpThreshold);
+    // console.log(this.xpThreshold);
+    this.xpThresholdBuffer = (this.xpThreshold / 4)
+    console.log(this.xpThresholdBuffer);
   }
 
 
   monsterXpConverter(monsterObject) {
-    console.log("xpConverterTest");
+    // console.log("xpConverterTest");
     if (monsterObject.challenge_rating === "0") {
       monsterObject.xp = 10;
     } else if (monsterObject.challenge_rating === "1/8") {

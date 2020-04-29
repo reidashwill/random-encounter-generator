@@ -21,7 +21,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'random-encounter-generator',
       template: './src/index.html',
-      inject: 'body'
+      inject: 'head'
     })
   ],
   module: {

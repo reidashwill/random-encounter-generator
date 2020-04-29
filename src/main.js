@@ -108,20 +108,16 @@ $(document).ready(function () {
     event.preventDefault();
     $(".results").show();
     $("#form-control").fadeOut(200);
-    let sound = new Audio("");
-    sound.play();
     (async () => {
       let encounter = new Encounter;
-      console.log("test");
       encounter.partyLevel = $("#partyLevel").val();
       encounter.partyMembers = $("#partyMembers").val();
       encounter.challengeDifficulty = $("#challengeDifficulty").val();
-      encounter.monsterNumber = $("#monsterNumber").val();
-      encounter.monsterSize = $("#monsterSize").val();
       encounter.monsterType = $("#monsterType").val();
       encounter.environment = $("#environment").val();
-      encounter.partyXpThreshold(encounter.partyMembers, encounter.partyLevel, encounter.challengeDifficulty);
-      console.log(encounter);
+      // console.log("party members:", encounter.partyMembers, "difficulty:", encounter.challengeDifficulty,"party level:", encounter.partyLevel);
+      encounter.partyXpThreshold(encounter.partyMembers, encounter.challengeDifficulty, encounter.partyLevel);
+      // console.log(encounter);
       encounter.encounterGen();
     })();
   });
