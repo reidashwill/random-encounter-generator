@@ -39,13 +39,13 @@ p {
   font-family: 'IM Fell English', serif;
 }
 #scroll {
-  width: 1000px;
-  height: 800px;
+  width: 900px;
+  height: 700px;
 }
 tr{
   color: black;
   position: absolute;
-  top: 50%;
+  margin-top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -55,9 +55,10 @@ tr{
 }
 .typewriter tr{
   display: inline-block;
-  	overflow: hidden;
+    overflow: hidden;
+    margin: 0 auto;
   	letter-spacing: 2px;
- 	animation: typing 5s steps(50, end), blink .75s step-end infinite;
+ 	animation: typing 5s steps(100, end), blink .75s step-end infinite;
     white-space: nowrap;
     font-size: 30px;
     font-weight: 700;
@@ -65,7 +66,7 @@ tr{
 }
 @keyframes typing {
   from {width:0}
-  to {width:100%}
+  to {width:50%}
 }
 .animated {
   -webkit-animation-duration: 4s;
