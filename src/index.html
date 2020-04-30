@@ -1,117 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Encounter Generator</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron animated bounceInDown">
-        <form id="form-control">
-          <h4>Please select your average party level.</h4>
-          <select class="form-group" id="partyLevel">
-            <!-- <option>Random</option> -->
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-            <option value="17">17</option>
-            <option value="18">18</option>
-            <option value="19">19</option>
-            <option value="20">20</option>
-          </select>
-          <br>
-          <br>
-          <h4>How many members in the party?</h4>
-          <select class="form-group" id="partyMembers">
-            <!-- <option>Random</option> -->
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-          </select>
-          <br>
-          <br>
-          <h4>How difficult do you want this encounter to be?</h4>
-          <select class="form-group" id="challengeDifficulty">
-            <!-- <option>Random</option> -->
-            <option value="0">Easy</option>
-            <option value="1">Medium</option>
-            <option value="2">Hard</option>
-            <option value="3">Deadly</option>
-          </select>
-          <br>
-          <br>
-          <!-- <h4>What type of monster(s) will they face?</h4>
-          <select class="form-group" id="monsterType">
-            <option value="aberration">Aberrations</option>
-            <option value="beast">Beasts</option>
-            <option value="celestial">Celestials</option>
-            <option value="construct">Constructs</option>
-            <option value="dragon">Dragons</option>
-            <option value="elementals">Elementals</option>
-            <option value="fey">Fey</option>
-            <option value="fiends">Fiends</option>
-            <option value="giants">Giants</option>
-            <option value="humanoids">Humanoids</option>
-            <option value="monstrosities">Monstrosities</option>
-            <option value="oozes">Oozes</option>
-            <option value="plants">Plants</option>
-            <option value="undead">Undead</option>
-          </select> -->
-          <!-- <br>
-          <br> -->
-          <h4>What environment are your players in?</h4>
-          <select class="form-group" id="environment" name="environment">
-            <option value="random">Random</option>
-            <option value="arcticEnvironment">Arctic</option>
-            <option value="coastalEnvironment">Coastal</option>
-            <option value="desertEnvironment">Desert</option>
-            <option value="forestEnvironment">Forest</option>
-            <option value="grasslandEnvironment">Grassland</option>
-            <option value="hillEnvironment">Hill</option>
-            <option value="mountainEnvironment">Mountain</option>
-            <option value="swampEnvironment">Swamp</option>
-            <option value="underdarkEnvironment">Underdark</option>
-            <option value="underwaterEnvironment">Underwater</option>
-            <option value="urbanEnvironment">Urban</option>
-          </select>
-          <br>
-          <br>
-          <button type="submit" class="btn btn-danger" id="submit">Create Encounter</button>
-        </form>
-      </div> 
-    </div>
-        <div class="resultContainer animated fadeIn">
-          <div class="results">
-            <div class="typewriter">
-              <h1 class="printOff">Your Encounter Details</h1>
-              <!-- <h4 class="monName">Monster Name &ensp; <span class="CR">Challege rating</span></h4> -->
-              <div id="output">
-                <div class="row">
-                  <div class="col-md-3"></div>
-                  <div  class="col-md-3">
-                    <h5>Monster Name</h5>
-                    <h4 id="monsterOutput"></h4>
-                  </div >
-                  <div class="col-md-3">
-                    <h5>Challenge Rating</h5>
-                    <h4 id="crOutput"></h4>
-                  </div>
-                  <div class="col-md-3"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Encounter Generator</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron animated bounceInDown">
+      <form id="form-control">
+        <h4>Please select your average party level.</h4>
+        <select class="form-group" id="partyLevel">
+          <!-- <option>Random</option> -->
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+        </select>
+        <br>
+        <br>
+        <h4>How many members in the party?</h4>
+        <select class="form-group" id="partyMembers">
+          <!-- <option>Random</option> -->
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        <br>
+        <br>
+        <h4>How difficult do you want this encounter to be?</h4>
+        <select class="form-group" id="challengeDifficulty">
+          <!-- <option>Random</option> -->
+          <option value="0">Easy</option>
+          <option value="1">Medium</option>
+          <option value="2">Hard</option>
+          <option value="3">Deadly</option>
+        </select>
+        <br>
+        <br>
+        <!-- <h4>What type of monster(s) will they face?</h4>
+        <select class="form-group" id="monsterType">
+          <option value="aberration">Aberrations</option>
+          <option value="beast">Beasts</option>
+          <option value="celestial">Celestials</option>
+          <option value="construct">Constructs</option>
+          <option value="dragon">Dragons</option>
+          <option value="elementals">Elementals</option>
+          <option value="fey">Fey</option>
+          <option value="fiends">Fiends</option>
+          <option value="giants">Giants</option>
+          <option value="humanoids">Humanoids</option>
+          <option value="monstrosities">Monstrosities</option>
+          <option value="oozes">Oozes</option>
+          <option value="plants">Plants</option>
+          <option value="undead">Undead</option>
+        </select> -->
+        <!-- <br>
+        <br> -->
+        <h4>What environment are your players in?</h4>
+        <select class="form-group" id="environment" name="environment">
+          <option value="random">Random</option>
+          <option value="arcticEnvironment">Arctic</option>
+          <option value="coastalEnvironment">Coastal</option>
+          <option value="desertEnvironment">Desert</option>
+          <option value="forestEnvironment">Forest</option>
+          <option value="grasslandEnvironment">Grassland</option>
+          <option value="hillEnvironment">Hill</option>
+          <option value="mountainEnvironment">Mountain</option>
+          <option value="swampEnvironment">Swamp</option>
+          <option value="underdarkEnvironment">Underdark</option>
+          <option value="underwaterEnvironment">Underwater</option>
+          <option value="urbanEnvironment">Urban</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-danger" id="submit">Create Encounter</button>
+      </form>
+    </div> 
+  </div>
+      <div class="resultContainer animated fadeIn">
+        <div class="results">
+          <div class="typewriter">
+            <h1 class="printOff">Your Encounter Details</h1>
+            <!-- <h4 class="monName">Monster Name &ensp; <span class="CR">Challege rating</span></h4> -->
+            <div id="output">
+              <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div  class="col-md-3">
+                  <h5>Monster Name</h5>
+                  <h4 id="monsterOutput0"></h4>
+                  <h4 class="speech" id="xtra0"></h4>
+                  <h4 id="monsterOutput1"></h4>
+                  <h4 class="speech" id="xtra1"></h4>
+                  <h4 id="monsterOutput2"></h4>
+                  <h4 class="speech" id="xtra2"></h4>
+                  <h4 id="monsterOutput3"></h4>
+                  <h4 class="speech" id="xtra3"></h4>
+                  <h4 id="monsterOutput4"></h4>
+                  <h4 class="speech" id="xtra4"></h4>
+                  <h4 id="monsterOutput5"></h4>
+                  <h4 class="speech" id="xtra5"></h4>
+                  <h4 id="monsterOutput6"></h4>
+                  <h4 class="speech" id="xtra6"></h4>
+                  <h4 id="monsterOutput7"></h4>
+                  <h4 class="speech" id="xtra7"></h4>
+                  <h4 id="monsterOutput8"></h4>
+                  <h4 class="speech" id="xtra8"></h4>
+                  <h4 id="monsterOutput9"></h4>
+                  <h4 class="speech" id="xtra9"></h4>
+                  <h4 id="monsterOutput10"></h4>
+                  <h4 class="speech" id="xtra10"></h4>
+                  <h4 id="monsterOutput11"></h4>
+                  <h4 class="speech" id="xtra11"></h4>
+                  <h4 id="monsterOutput12"></h4>
+                  <h4 class="speech" id="xtra12"></h4>
+                  <h4 id="monsterOutput13"></h4>
+                  <h4 class="speech" id="xtra13"></h4>
+                  <h4 id="monsterOutput14"></h4>
+                  <h4 class="speech" id="xtra14"></h4>
+                </div >
+                <div class="col-md-3">
+                  <h5>Challenge Rating</h5>
+                  <h4 id="crOutput0"></h4>
+                  <h4 id="crOutput1"></h4>
+                  <h4 id="crOutput2"></h4>
+                  <h4 id="crOutput3"></h4>
+                  <h4 id="crOutput4"></h4>
+                  <h4 id="crOutput5"></h4>
+                  <h4 id="crOutput6"></h4>
+                  <h4 id="crOutput7"></h4>
+                  <h4 id="crOutput8"></h4>
+                  <h4 id="crOutput9"></h4>
+                  <h4 id="crOutput10"></h4>
+                  <h4 id="crOutput11"></h4>
+                  <h4 id="crOutput12"></h4>
+                  <h4 id="crOutput13"></h4>
+                  <h4 id="crOutput14"></h4>
+                </div>
+                <div class="col-md-3">
+                  </br>
                 </div>
               </div>
             </div>
