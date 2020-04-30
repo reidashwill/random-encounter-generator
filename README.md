@@ -50,7 +50,7 @@ _To Download Manually:_
 * Right click "index.html" and select your preferred browser or text editor.
 
 _To view live:_
-* [Click here!](https://friendly-dubinsky-5def3e.netlify.app)
+* [Click here!](https://stoic-benz-db0844.netlify.app/)
 
 ## Known Bugs
 
