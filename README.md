@@ -55,6 +55,8 @@ _To view live:_
 ## Known Bugs
 
 _Due to unknown cause, sometimes the encounter array is not populated_
+_Scaling the browser window is not ideal at this point_
+_Viewing on a mobile device is not ideal at this point_
 
 ## Support and contact details
 

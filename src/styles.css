@@ -151,12 +151,14 @@ select{
   margin: 0;
   color: rgb(0, 0, 0);
   letter-spacing: -1px;
+  word-spacing: 2px;
   font-weight: 700;
   text-shadow: 0px 0px 8px rgb(255, 249, 218), 0px 0px 8px #fff;
 }
 h4.speech {
   display: none;
-  margin:auto;
+  word-spacing: 2px;
+  margin: auto;
   opacity: 85%;
   width: auto;
   padding: 1%;
@@ -174,6 +176,7 @@ h4.speech {
   -moz-box-shadow: 2px 2px 4px #888;
   box-shadow: 2px 2px 4px #888;
   opacity: 90%;
+  box-sizing: border-box;
 }
 .typewriter p{
   display: inline-block;

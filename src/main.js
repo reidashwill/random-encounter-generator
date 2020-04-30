@@ -250,7 +250,7 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra0").html(`<span>${encounter.encounterArray[0].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[0].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[0].xp}XP.</span>`);
+          $("#xtra0").html("  HP: " + `<span>${encounter.encounterArray[0].hit_points}</span>` + "  AC: " + `<span>${encounter.encounterArray[0].armor_class}</span>` +  " Type: " + `<span>${encounter.encounterArray[0].type}</span>`);
           
         });
       }
@@ -271,7 +271,7 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra1").html(`<span>${encounter.encounterArray[1].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[1].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[1].xp}XP.</span>`);
+          $("#xtra1").html(" HP: " +`<span>${encounter.encounterArray[1].hit_points}</span>` +  " AC: " + `<span>${encounter.encounterArray[1].armor_class}</span>` + " Type: " + `<span>${encounter.encounterArray[1].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[2].name}` !== "null")) {
@@ -290,7 +290,7 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra2").html(`<span>${encounter.encounterArray[2].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[2].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[2].xp}XP.</span>`);
+          $("#xtra2").html(" HP: " + `<span>${encounter.encounterArray[2].hit_points}</span>` +  " AC: " + `<span>${encounter.encounterArray[2].armor_class}</span>` +  " Type: " +`<span>${encounter.encounterArray[2].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[3].name}` !== "null")) {
@@ -309,7 +309,7 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra3").html(`<span>${encounter.encounterArray[3].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[3].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[3].xp}XP.</span>`);
+          $("#xtra3").html(" HP: " + `<span>${encounter.encounterArray[3].hit_points}</span>` + " AC: " + `<span>${encounter.encounterArray[3].armor_class}</span>` + " Type: " + `<span>${encounter.encounterArray[3].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[4].name}` !== "null")) {
@@ -328,7 +328,7 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra4").html(`<span>${encounter.encounterArray[4].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[4].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[4].xp}XP.</span>`);
+          $("#xtra4").html(" HP: " + `<span>${encounter.encounterArray[4].hit_points}</span>` + " AC: " + `<span>${encounter.encounterArray[4].armor_class}</span>` +  " Type: " + `<span>${encounter.encounterArray[4].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[5].name}` !== "null")) {
@@ -347,7 +347,7 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra5").html(`<span>${encounter.encounterArray[5].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[5].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[5].xp}XP.</span>`);
+          $("#xtra5").html("HP: " + `<span>${encounter.encounterArray[5].hit_points}</span>` + " AC: " + `<span>${encounter.encounterArray[5].armor_class}</span>` + " Type: " + `<span>${encounter.encounterArray[5].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[6].name}` !== "null")) {
@@ -366,7 +366,7 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra6").html(`<span>${encounter.encounterArray[6].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[6].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[6].xp}XP.</span>`);
+          $("#xtra6").html("HP: " + `<span>${encounter.encounterArray[6].hit_points}</span>` + " C. " + `<span>${encounter.encounterArray[6].armor_class}</span>` + " Type: " + `<span>${encounter.encounterArray[6].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[7].name}` !== "null")) {
@@ -385,7 +385,7 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra7").html(`<span>${encounter.encounterArray[7].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[7].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[7].xp}XP.</span>`);
+          $("#xtra7").html("HP: " + `<span>${encounter.encounterArray[7].hit_points}</span>` + " AC: " + `<span>${encounter.encounterArray[7].armor_class}</span>` + " Type: " + `<span>${encounter.encounterArray[7].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[8].name}` !== "null")) {
@@ -405,7 +405,7 @@ $(document).ready(function () {
           $("#xtra7").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra8").html(`<span>${encounter.encounterArray[8].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[8].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[8].xp}XP.</span>`);
+          $("#xtra8").html("HP: " + `<span>${encounter.encounterArray[8].hit_points}</span>` + " AC: " + `<span>${encounter.encounterArray[8].armor_class}</span>` + " Type: " + `<span>${encounter.encounterArray[8].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[9].name}` !== "null")) {
@@ -424,7 +424,7 @@ $(document).ready(function () {
           $("#xtra7").hide();
           $("#xtra8").hide();
           $("#xtra10").hide();
-          $("#xtra9").html(`<span>${encounter.encounterArray[9].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[9].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[9].xp}XP.</span>`);
+          $("#xtra9").html("HP: " + `<span>${encounter.encounterArray[9].hit_points}</span>` + " AC: "+ `<span>${encounter.encounterArray[9].armor_class}</span>` + " Type: " + `<span>${encounter.encounterArray[9].type}</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[10].name}` !== "null")) {
@@ -443,39 +443,9 @@ $(document).ready(function () {
           $("#xtra7").hide();
           $("#xtra8").hide();
           $("#xtra9").hide();
-          $("#xtra10").html(`<span>${encounter.encounterArray[10].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[10].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[10].xp}XP.</span>`);
+          $("#xtra10").html("HP: " + `<span>${encounter.encounterArray[10].hit_points}</span>` + " AC: "+ `<span>${encounter.encounterArray[10].armor_class}</span>` + " Type: " + `<span>${encounter.encounterArray[10].type}</span>`);
         });
       }
-    })();
-
-    // $('.reset').on('click', '#resetButton', function(event) {
-    //   event.preventDefault();
-    //   randomBg();
-    //   $(".resultContainer").hide();
-    //   $(".jumbotron").show();
-    //   document.getElementById('form-control').reset();
-    //   $("#monsterOutput0").html(" ");
-    //   $("#monsterOutput1").html(" ");
-    //   $("#monsterOutput2").html(" ");
-    //   $("#monsterOutput3").html(" ");
-    //   $("#monsterOutput4").html(" ");
-    //   $("#monsterOutput5").html(" ");
-    //   $("#monsterOutput6").html(" ");
-    //   $("#monsterOutput7").html(" ");
-    //   $("#monsterOutput8").html(" ");
-    //   $("#monsterOutput9").html(" ");
-    //   $("#monsterOutput10").html(" ");
-    //   $("#crOutput0").html(" ");
-    //   $("#crOutput1").html(" ");
-    //   $("#crOutput2").html(" ");
-    //   $("#crOutput3").html(" ");
-    //   $("#crOutput4").html(" ");
-    //   $("#crOutput5").html(" ");
-    //   $("#crOutput6").html(" ");
-    //   $("#crOutput7").html(" ");
-    //   $("#crOutput8").html(" ");
-    //   $("#crOutput9").html(" ");
-    //   $("#crOutput10").html(" ");
-    // });
+    })(); 
   });
 });
