@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Encounter Generator</title>
-</head>
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">  
-        <form id="form-control" class="c-sidebar">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Encounter Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron animated bounceInDown">
+        <form id="form-control">
           <h4>Please select your average party level.</h4>
           <select class="form-group" id="partyLevel">
             <!-- <option>Random</option> -->
@@ -34,6 +33,8 @@
             <option value="19">19</option>
             <option value="20">20</option>
           </select>
+          <br>
+          <br>
           <h4>How many members in the party?</h4>
           <select class="form-group" id="partyMembers">
             <!-- <option>Random</option> -->
@@ -42,6 +43,8 @@
             <option value="5">5</option>
             <option value="6">6</option>
           </select>
+          <br>
+          <br>
           <h4>How difficult do you want this encounter to be?</h4>
           <select class="form-group" id="challengeDifficulty">
             <!-- <option>Random</option> -->
@@ -50,7 +53,9 @@
             <option value="2">Hard</option>
             <option value="3">Deadly</option>
           </select>
-          <h4>What type of monster(s) will they face?</h4>
+          <br>
+          <br>
+          <!-- <h4>What type of monster(s) will they face?</h4>
           <select class="form-group" id="monsterType">
             <option value="aberration">Aberrations</option>
             <option value="beast">Beasts</option>
@@ -66,10 +71,12 @@
             <option value="oozes">Oozes</option>
             <option value="plants">Plants</option>
             <option value="undead">Undead</option>
-          </select>
+          </select> -->
+          <!-- <br>
+          <br> -->
           <h4>What environment are your players in?</h4>
           <select class="form-group" id="environment" name="environment">
-            <!-- <option value="default">Any Environment</option> -->
+            <option value="random">Random</option>
             <option value="arcticEnvironment">Arctic</option>
             <option value="coastalEnvironment">Coastal</option>
             <option value="desertEnvironment">Desert</option>
@@ -82,39 +89,42 @@
             <option value="underwaterEnvironment">Underwater</option>
             <option value="urbanEnvironment">Urban</option>
           </select>
+          <br>
+          <br>
           <button type="submit" class="btn btn-danger" id="submit">Create Encounter</button>
         </form>
-      </div>
-      <div class="col-md-9">
-        <div class="results animated fadeIn">
-          <div class="typewriter">
-            <h1 class="printOff">Your Encounter Details</h1>
-            <table class="table table.striped" >
-              <thead>
-                <tr>
-                  <th>Monster Name</th>
-                  <th>Challenge Rating</th>
-                  <img id="scroll" src="https://i.imgur.com/bkomnzC.png" alt="scroll">
-                </tr>
-                <tr>
-                  <td class="table"></td>
-                  <td></td>
-                </tr>
-              </thead>
-            </table>
+      </div> 
+    </div>
+        <div class="resultContainer animated fadeIn">
+          <div class="results">
+            <div class="typewriter">
+              <h1 class="printOff">Your Encounter Details</h1>
+              <!-- <h4 class="monName">Monster Name &ensp; <span class="CR">Challege rating</span></h4> -->
+              <div id="output">
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div  class="col-md-3">
+                    <h5>Monster Name</h5>
+                    <h4 id="monsterOutput"></h4>
+                  </div >
+                  <div class="col-md-3">
+                    <h5>Challenge Rating</h5>
+                    <h4 id="crOutput"></h4>
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <button onclick="(window.location.reload())" class="btn-animated" id="resetButton">Try Again</button>
+          <!-- Button changed to bounceInUp -->
+          <div class="reset animated bounceInUp">
+            <button class="btn animated bounceInUp" id="resetButton">Try Again</button> 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- <div class="music">
-  <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809321608&auto_play=true"></iframe>
-  </div> -->
-
-
-  <!-- <audio autoplay preload='auto' loop id="myAudio">
-    <source src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809321608" type="audio/mpeg" >
-  </audio> -->
-</body>
+    <div class="music">
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809321608&auto_play=true"></iframe>
+    </div>
+  </body>
 </html>

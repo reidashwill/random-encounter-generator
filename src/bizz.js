@@ -28,10 +28,8 @@ export class Encounter {
       if (request.ok && request.status === 200) {
         let monsterObject = await request.json();
         monsterObject.xp = 0;
-        // console.log(monsterObject);
         this.monsterXpConverter(monsterObject);
         this.currentEnvironmentArray.push(monsterObject);
-        // console.log(this.currentEnvironmentArray);
 
       } else {
         request = false;
@@ -90,20 +88,64 @@ export class Encounter {
       for (let i = 0; i <= this.urbanMonsterArray.length - 1; i++) {
         await this.getMonster(this.urbanMonsterArray[i]);
       }
+    } else if (this.environment === "random") {
+      let environmentSelectNum = this.randomNumber(11);
+      if(environmentSelectNum === 1){
+        for (let i = 0; i <= this.forestMonsterArray.length - 1; i++) {
+          await this.getMonster(this.forestMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 2){
+        for (let i = 0; i <= this.desertMonsterArray.length - 1; i++) {
+          await this.getMonster(this.desertMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 3){
+        for (let i = 0; i <= this.hillMonsterArray.length - 1; i++) {
+          await this.getMonster(this.hillMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 4){
+        for (let i = 0; i <= this.grasslandMonsterArray.length - 1; i++) {
+          await this.getMonster(this.grasslandMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 5){
+        for (let i = 0; i <= this.mountainMonsterArray.length - 1; i++) {
+          await this.getMonster(this.mountainMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 6){
+        for (let i = 0; i <= this.arcticMonsterArray.length - 1; i++) {
+          await this.getMonster(this.arcticMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 7){
+        for (let i = 0; i <= this.coastalMonsterArray.length - 1; i++) {
+          await this.getMonster(this.coastalMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 8){
+        for (let i = 0; i <= this.swampMonsterArray.length - 1; i++) {
+          await this.getMonster(this.swampMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 9){
+        for (let i = 0; i <= this.underdarkMonsterArray.length - 1; i++) {
+          await this.getMonster(this.underdarkMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 10){
+        for (let i = 0; i <= this.underwaterMonsterArray.length - 1; i++) {
+          await this.getMonster(this.underwaterMonsterArray[i]);
+        }
+      } else if (environmentSelectNum === 11){
+        for (let i = 0; i <= this.urbanMonsterArray.length - 1; i++) {
+          await this.getMonster(this.urbanMonsterArray[i]);
+        }
+      }
     }
 
     for (let i = 0; i <this.xpThreshold;) {
-      this.monsterXpPool = 0
-      console.log("currentEnvironmentArray", this.currentEnvironmentArray);
+      this.monsterXpPool = 0;
       let monsterSelectNum = this.randomNumber(this.currentEnvironmentArray.length);
-      console.log("monsterSelectNum", monsterSelectNum);
-      console.log(this.currentEnvironmentArray[monsterSelectNum].xp);
       if (this.currentEnvironmentArray[monsterSelectNum].xp < this.xpThresholdBuffer){
         this.encounterArray.push(this.currentEnvironmentArray[monsterSelectNum]);
         for (i=0; i < this.encounterArray.length; i++){
           this.monsterXpPool += this.encounterArray[i].xp;
         }
-        console.log(this.encounterArray);
+        // console.log("actual encounter array:", this.encounterArray);
         if ( this.encounterArray.length >= 15) {
           this.monsterXpPool *= 4;
         }else if( this.encounterArray.length >= 11){
@@ -115,17 +157,14 @@ export class Encounter {
         }else if( this.encounterArray.length === 2){
           this.monsterXpPool *= 1.5;
         }
-        console.log("monsterXpPool", this.monsterXpPool);
-        
-        this.xpThreshold -= this.monsterXpPool
-        console.log("xpThreshold", this.xpThreshold);
+        this.xpThreshold -= this.monsterXpPool;
       }
     }
   }
 
 
   randomNumber(max) {
-    return Math.floor(Math.random() * max)
+    return Math.floor(Math.random() * max);
   }
   partyXpThreshold(partyMembers, challengeDifficulty, partyLevel) {
     const thresholdArray = [[],
@@ -152,8 +191,7 @@ export class Encounter {
     ];
     this.xpThreshold = partyMembers * thresholdArray[partyLevel][challengeDifficulty];
     // console.log(this.xpThreshold);
-    this.xpThresholdBuffer = (this.xpThreshold / 4)
-    console.log("xpThresholdBuffer", this.xpThresholdBuffer);
+    this.xpThresholdBuffer = (this.xpThreshold / 2);
   }
 
 
