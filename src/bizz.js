@@ -42,9 +42,7 @@ export class Encounter {
 
   async encounterGen() {
     this.encounterArray = [];
-    // console.log("EnvironmentGen start test")
     if (this.environment === "forestEnvironment") {
-      // console.log("environment test")
       for (let i = 0; i <= this.forestMonsterArray.length - 1; i++) {
         await this.getMonster(this.forestMonsterArray[i]);
       }
@@ -145,7 +143,6 @@ export class Encounter {
         for (i=0; i < this.encounterArray.length; i++){
           this.monsterXpPool += this.encounterArray[i].xp;
         }
-        // console.log("actual encounter array:", this.encounterArray);
         if ( this.encounterArray.length >= 15) {
           this.monsterXpPool *= 4;
         }else if( this.encounterArray.length >= 11){
@@ -190,13 +187,11 @@ export class Encounter {
       [2800, 5700, 8500, 12700]
     ];
     this.xpThreshold = partyMembers * thresholdArray[partyLevel][challengeDifficulty];
-    // console.log(this.xpThreshold);
     this.xpThresholdBuffer = (this.xpThreshold / 2);
   }
 
 
   monsterXpConverter(monsterObject) {
-    // console.log("xpConverterTest");
     if (monsterObject.challenge_rating === "0") {
       monsterObject.xp = 10;
     } else if (monsterObject.challenge_rating === "1/8") {
