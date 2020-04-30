@@ -158,7 +158,8 @@ h4.speech {
   display: none;
   margin:auto;
   opacity: 85%;
-  width: contain;
+  width: auto;
+  padding: 1%;
   white-space: nowrap;
   word-wrap: break-word;
   font-size: auto;
@@ -264,7 +265,7 @@ h4.speech {
   background-color: rgb(95, 24, 24);
 }
 
-@media screen and (min-width: 200px) and (max-width: 1000px) {
+@media screen and (min-width: 200px) and (max-width: 1200px) {
 .resultContainer {
   background-image: url('https://i.imgur.com/nRzMcb8.png?1');
   background-position: center;
