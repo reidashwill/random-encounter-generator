@@ -264,7 +264,7 @@ h4.speech {
   background-color: rgb(95, 24, 24);
 }
 
-@media screen and (min-width: 400px) and (max-width: 800px) {
+@media screen and (min-width: 200px) and (max-width: 1000px) {
 .resultContainer {
   background-image: url('https://i.imgur.com/nRzMcb8.png?1');
   background-position: center;

@@ -7,8 +7,6 @@ import { Encounter } from './../src/bizz.js';
 
 
 $(document).ready(function () {
-
-  //changes background image upon selection of environment//
   $('#environment').change(function () {
     let selectedValue = ($(this).val());
     switch (selectedValue) {
@@ -50,7 +48,6 @@ $(document).ready(function () {
       break;
     }
   });
-  //add ambient sound effects to environments//
   let dice = new Audio('https://opengameart.org/sites/default/files/audio_preview/5%20dice%20rolling.ogg.mp3');
   let coast = new Audio('https://opengameart.org/sites/default/files/audio_preview/jasinski-wave-prev.ogg.mp3');
   let forest = new Audio('https://opengameart.org/sites/default/files/audio_preview/birds-isaiah658.ogg.mp3');
@@ -220,8 +217,8 @@ $(document).ready(function () {
 
   $("#form-control").submit(function (event) {
     event.preventDefault();
-    $(".resultContainer").toggle();
-    $(".reset").toggle();
+    $(".resultContainer").show();
+    $(".reset").show();
     $(".jumbotron").fadeOut(200);
     $("#btn-place").fadeOut(200);
     let sound = new Audio('https://opengameart.org/sites/default/files/audio_preview/hs.mp3.ogg');
@@ -253,14 +250,11 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra0").html(`<span>${encounter.encounterArray[0].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[0].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[0].xp}XP.</span>`);
           
         });
       }
+      
       if ((`<p>${encounter.encounterArray[1].name}` !== "null")) {
         $("#monsterOutput1").html(`<p>${encounter.encounterArray[1].name}</p>`);
         if ((`<p>${encounter.encounterArray[1].challenge_rating}` !== "null"))
@@ -277,10 +271,6 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra1").html(`<span>${encounter.encounterArray[1].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[1].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[1].xp}XP.</span>`);
         });
       }
@@ -300,10 +290,6 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra2").html(`<span>${encounter.encounterArray[2].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[2].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[2].xp}XP.</span>`);
         });
       }
@@ -323,10 +309,6 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra3").html(`<span>${encounter.encounterArray[3].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[3].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[3].xp}XP.</span>`);
         });
       }
@@ -346,10 +328,6 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra4").html(`<span>${encounter.encounterArray[4].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[4].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[4].xp}XP.</span>`);
         });
       }
@@ -369,10 +347,6 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra5").html(`<span>${encounter.encounterArray[5].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[5].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[5].xp}XP.</span>`);
         });
       }
@@ -392,10 +366,6 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra6").html(`<span>${encounter.encounterArray[6].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[6].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[6].xp}XP.</span>`);
         });
       }
@@ -415,14 +385,11 @@ $(document).ready(function () {
           $("#xtra8").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra7").html(`<span>${encounter.encounterArray[7].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[7].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[7].xp}XP.</span>`);
         });
       }
       if ((`<p>${encounter.encounterArray[8].name}` !== "null")) {
+
         $("#monsterOutput8").html(`<p>${encounter.encounterArray[8].name}</p>`);
         if ((`<p>${encounter.encounterArray[8].challenge_rating}` !== "null"))
           $("#crOutput8").html(`<p>${encounter.encounterArray[8].challenge_rating}.</p>`);
@@ -438,10 +405,6 @@ $(document).ready(function () {
           $("#xtra7").hide();
           $("#xtra9").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra8").html(`<span>${encounter.encounterArray[8].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[8].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[8].xp}XP.</span>`);
         });
       }
@@ -461,10 +424,6 @@ $(document).ready(function () {
           $("#xtra7").hide();
           $("#xtra8").hide();
           $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra9").html(`<span>${encounter.encounterArray[9].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[9].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[9].xp}XP.</span>`);
         });
       }
@@ -484,112 +443,39 @@ $(document).ready(function () {
           $("#xtra7").hide();
           $("#xtra8").hide();
           $("#xtra9").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra10").html(`<span>${encounter.encounterArray[10].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[10].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[10].xp}XP.</span>`);
         });
       }
-      // if ((`<p>${encounter.encounterArray[11].name}` !== "null")) {
-      //   $("#monsterOutput11").html(`<p>${encounter.encounterArray[11].name}</p>`);
-      //   if ((`<p>${encounter.encounterArray[11].challenge_rating}` !== "null"))
-      //     $("#crOutput11").html(`<p>${encounter.encounterArray[11].challenge_rating}.</p>`);
-      //   $("#monsterOutput11").click(function() { 
-      //     $("#xtra11").toggle();
-      //     $("#xtra0").hide();
-      //     $("#xtra1").hide();
-      //     $("#xtra2").hide();
-      //     $("#xtra3").hide();
-      //     $("#xtra4").hide();
-      //     $("#xtra5").hide();
-      //     $("#xtra6").hide();
-      //     $("#xtra7").hide();
-      //     $("#xtra8").hide();
-      //     $("#xtra9").hide();
-      //     $("#xtra10").hide();
-      //     $("#xtra12").hide();
-      //     $("#xtra13").hide();
-      //     $("#xtra14").hide();
-      //     $("#xtra11").html(`<span>${encounter.encounterArray[11].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[11].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[11].xp}XP.</span>`);
-      //   });
-      // }
-      // if ((`<p>${encounter.encounterArray[12].name}` !== "null")) {
-      //   $("#monsterOutput12").html(`<p>${encounter.encounterArray[12].name}</p>`);
-      //   if ((`<p>${encounter.encounterArray[12].challenge_rating}` !== "null"))
-      //     $("#crOutput12").html(`<p>${encounter.encounterArray[12].challenge_rating}.</p>`);
-      //   $("#monsterOutput12").click(function() { 
-      //     $("#xtra12").toggle();
-      //     $("#xtra0").hide();
-      //     $("#xtra1").hide();
-      //     $("#xtra2").hide();
-      //     $("#xtra3").hide();
-      //     $("#xtra4").hide();
-      //     $("#xtra5").hide();
-      //     $("#xtra6").hide();
-      //     $("#xtra7").hide();
-      //     $("#xtra8").hide();
-      //     $("#xtra9").hide();
-      //     $("#xtra10").hide();
-      //     $("#xtra11").hide();
-      //     $("#xtra13").hide();
-      //     $("#xtra14").hide();
-      //     $("#xtra12").html(`<span>${encounter.encounterArray[12].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[12].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[12].xp}XP.</span>`);
-      //   });
-      // }
-      // if ((`<p>${encounter.encounterArray[13].name}` !== "null")) {
-      //   $("#monsterOutput13").html(`<p>${encounter.encounterArray[13].name}</p>`);
-      //   if ((`<p>${encounter.encounterArray[13].challenge_rating}` !== "null"))
-      //     $("#crOutput13").html(`<p>${encounter.encounterArray[13].challenge_rating}.</p>`);
-      //   $("#monsterOutput13").click(function() { 
-      //     $("#xtra13").toggle();
-      //     $("#xtra0").hide();
-      //     $("#xtra1").hide();
-      //     $("#xtra2").hide();
-      //     $("#xtra3").hide();
-      //     $("#xtra4").hide();
-      //     $("#xtra5").hide();
-      //     $("#xtra6").hide();
-      //     $("#xtra7").hide();
-      //     $("#xtra8").hide();
-      //     $("#xtra9").hide();
-      //     $("#xtra10").hide();
-      //     $("#xtra11").hide();
-      //     $("#xtra12").hide();
-      //     $("#xtra14").hide();
-      //     $("#xtra13").html(`<span>${encounter.encounterArray[13].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[13].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[13].xp}XP.</span>`);
-      //   });
-      // }
-      // if ((`<p>${encounter.encounterArray[14].name}` !== "null")) {
-      //   $("#monsterOutput14").html(`<p>${encounter.encounterArray[14].name}</p>`);
-      //   if ((`<p>${encounter.encounterArray[14].challenge_rating}` !== "null"))
-      //     $("#crOutput14").html(`<p>${encounter.encounterArray[14].challenge_rating}.</p>`);
-      //   $("#monsterOutput14").click(function() { 
-      //     $("#xtra14").toggle();
-      //     $("#xtra0").hide();
-      //     $("#xtra1").hide();
-      //     $("#xtra2").hide();
-      //     $("#xtra3").hide();
-      //     $("#xtra4").hide();
-      //     $("#xtra5").hide();
-      //     $("#xtra6").hide();
-      //     $("#xtra7").hide();
-      //     $("#xtra8").hide();
-      //     $("#xtra9").hide();
-      //     $("#xtra10").hide();
-      //     $("#xtra11").hide();
-      //     $("#xtra12").hide();
-      //     $("#xtra13").hide();
-      //     $("#xtra14").html(`<span>${encounter.encounterArray[14].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[14].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[14].xp}XP.</span>`);
-      //   });
-      // }
     })();
-    $('.reset').on('click', '#resetButton', function(event) {
-      event.preventDefault();
-      randomBg();
-      $(".resultContainer").hide();
-      $(".jumbotron").show();
-      document.getElementById('form-control').reset();
-    });
+
+    // $('.reset').on('click', '#resetButton', function(event) {
+    //   event.preventDefault();
+    //   randomBg();
+    //   $(".resultContainer").hide();
+    //   $(".jumbotron").show();
+    //   document.getElementById('form-control').reset();
+    //   $("#monsterOutput0").html(" ");
+    //   $("#monsterOutput1").html(" ");
+    //   $("#monsterOutput2").html(" ");
+    //   $("#monsterOutput3").html(" ");
+    //   $("#monsterOutput4").html(" ");
+    //   $("#monsterOutput5").html(" ");
+    //   $("#monsterOutput6").html(" ");
+    //   $("#monsterOutput7").html(" ");
+    //   $("#monsterOutput8").html(" ");
+    //   $("#monsterOutput9").html(" ");
+    //   $("#monsterOutput10").html(" ");
+    //   $("#crOutput0").html(" ");
+    //   $("#crOutput1").html(" ");
+    //   $("#crOutput2").html(" ");
+    //   $("#crOutput3").html(" ");
+    //   $("#crOutput4").html(" ");
+    //   $("#crOutput5").html(" ");
+    //   $("#crOutput6").html(" ");
+    //   $("#crOutput7").html(" ");
+    //   $("#crOutput8").html(" ");
+    //   $("#crOutput9").html(" ");
+    //   $("#crOutput10").html(" ");
+    // });
   });
 });
