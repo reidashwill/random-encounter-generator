@@ -177,6 +177,9 @@ h4.speech {
   box-shadow: 2px 2px 4px #888;
   opacity: 90%;
   box-sizing: border-box;
+  box-shadow: 2px 2px 4px #888;
+  opacity: 90%;
+  box-sizing: border-box;
 }
 .typewriter p{
   display: inline-block;
