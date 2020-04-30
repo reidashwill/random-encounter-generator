@@ -1,4 +1,3 @@
-import swal from 'sweetalert2';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -243,9 +242,23 @@ $(document).ready(function () {
         if ((`<p>${encounter.encounterArray[0].challenge_rating}` !== "null"))
           $("#crOutput0").html(`<p>${encounter.encounterArray[0].challenge_rating}.</p>`);
         $("#monsterOutput0").click(function() { 
+          $("#xtra0").toggle();
+          $("#xtra1").hide();
+          $("#xtra2").hide();
+          $("#xtra3").hide();
+          $("#xtra4").hide();
+          $("#xtra5").hide();
+          $("#xtra6").hide();
+          $("#xtra7").hide();
+          $("#xtra8").hide();
+          $("#xtra9").hide();
+          $("#xtra10").hide();
+          $("#xtra11").hide();
+          $("#xtra12").hide();
+          $("#xtra13").hide();
+          $("#xtra14").hide();
           $("#xtra0").html(`<span>${encounter.encounterArray[0].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[0].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[0].xp}XP.</span>`);
-          swal.fire($("#xtra0").show());
-          $("#xtra0").hide();
+          
         });
       }
       if ((`<p>${encounter.encounterArray[1].name}` !== "null")) {
@@ -478,98 +491,98 @@ $(document).ready(function () {
           $("#xtra10").html(`<span>${encounter.encounterArray[10].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[10].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[10].xp}XP.</span>`);
         });
       }
-      if ((`<p>${encounter.encounterArray[11].name}` !== "null")) {
-        $("#monsterOutput11").html(`<p>${encounter.encounterArray[11].name}</p>`);
-        if ((`<p>${encounter.encounterArray[11].challenge_rating}` !== "null"))
-          $("#crOutput11").html(`<p>${encounter.encounterArray[11].challenge_rating}.</p>`);
-        $("#monsterOutput11").click(function() { 
-          $("#xtra11").toggle();
-          $("#xtra0").hide();
-          $("#xtra1").hide();
-          $("#xtra2").hide();
-          $("#xtra3").hide();
-          $("#xtra4").hide();
-          $("#xtra5").hide();
-          $("#xtra6").hide();
-          $("#xtra7").hide();
-          $("#xtra8").hide();
-          $("#xtra9").hide();
-          $("#xtra10").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
-          $("#xtra11").html(`<span>${encounter.encounterArray[11].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[11].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[11].xp}XP.</span>`);
-        });
-      }
-      if ((`<p>${encounter.encounterArray[12].name}` !== "null")) {
-        $("#monsterOutput12").html(`<p>${encounter.encounterArray[12].name}</p>`);
-        if ((`<p>${encounter.encounterArray[12].challenge_rating}` !== "null"))
-          $("#crOutput12").html(`<p>${encounter.encounterArray[12].challenge_rating}.</p>`);
-        $("#monsterOutput12").click(function() { 
-          $("#xtra12").toggle();
-          $("#xtra0").hide();
-          $("#xtra1").hide();
-          $("#xtra2").hide();
-          $("#xtra3").hide();
-          $("#xtra4").hide();
-          $("#xtra5").hide();
-          $("#xtra6").hide();
-          $("#xtra7").hide();
-          $("#xtra8").hide();
-          $("#xtra9").hide();
-          $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
-          $("#xtra12").html(`<span>${encounter.encounterArray[12].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[12].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[12].xp}XP.</span>`);
-        });
-      }
-      if ((`<p>${encounter.encounterArray[13].name}` !== "null")) {
-        $("#monsterOutput13").html(`<p>${encounter.encounterArray[13].name}</p>`);
-        if ((`<p>${encounter.encounterArray[13].challenge_rating}` !== "null"))
-          $("#crOutput13").html(`<p>${encounter.encounterArray[13].challenge_rating}.</p>`);
-        $("#monsterOutput13").click(function() { 
-          $("#xtra13").toggle();
-          $("#xtra0").hide();
-          $("#xtra1").hide();
-          $("#xtra2").hide();
-          $("#xtra3").hide();
-          $("#xtra4").hide();
-          $("#xtra5").hide();
-          $("#xtra6").hide();
-          $("#xtra7").hide();
-          $("#xtra8").hide();
-          $("#xtra9").hide();
-          $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra14").hide();
-          $("#xtra13").html(`<span>${encounter.encounterArray[13].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[13].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[13].xp}XP.</span>`);
-        });
-      }
-      if ((`<p>${encounter.encounterArray[14].name}` !== "null")) {
-        $("#monsterOutput14").html(`<p>${encounter.encounterArray[14].name}</p>`);
-        if ((`<p>${encounter.encounterArray[14].challenge_rating}` !== "null"))
-          $("#crOutput14").html(`<p>${encounter.encounterArray[14].challenge_rating}.</p>`);
-        $("#monsterOutput14").click(function() { 
-          $("#xtra14").toggle();
-          $("#xtra0").hide();
-          $("#xtra1").hide();
-          $("#xtra2").hide();
-          $("#xtra3").hide();
-          $("#xtra4").hide();
-          $("#xtra5").hide();
-          $("#xtra6").hide();
-          $("#xtra7").hide();
-          $("#xtra8").hide();
-          $("#xtra9").hide();
-          $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").html(`<span>${encounter.encounterArray[14].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[14].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[14].xp}XP.</span>`);
-        });
-      }
+      // if ((`<p>${encounter.encounterArray[11].name}` !== "null")) {
+      //   $("#monsterOutput11").html(`<p>${encounter.encounterArray[11].name}</p>`);
+      //   if ((`<p>${encounter.encounterArray[11].challenge_rating}` !== "null"))
+      //     $("#crOutput11").html(`<p>${encounter.encounterArray[11].challenge_rating}.</p>`);
+      //   $("#monsterOutput11").click(function() { 
+      //     $("#xtra11").toggle();
+      //     $("#xtra0").hide();
+      //     $("#xtra1").hide();
+      //     $("#xtra2").hide();
+      //     $("#xtra3").hide();
+      //     $("#xtra4").hide();
+      //     $("#xtra5").hide();
+      //     $("#xtra6").hide();
+      //     $("#xtra7").hide();
+      //     $("#xtra8").hide();
+      //     $("#xtra9").hide();
+      //     $("#xtra10").hide();
+      //     $("#xtra12").hide();
+      //     $("#xtra13").hide();
+      //     $("#xtra14").hide();
+      //     $("#xtra11").html(`<span>${encounter.encounterArray[11].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[11].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[11].xp}XP.</span>`);
+      //   });
+      // }
+      // if ((`<p>${encounter.encounterArray[12].name}` !== "null")) {
+      //   $("#monsterOutput12").html(`<p>${encounter.encounterArray[12].name}</p>`);
+      //   if ((`<p>${encounter.encounterArray[12].challenge_rating}` !== "null"))
+      //     $("#crOutput12").html(`<p>${encounter.encounterArray[12].challenge_rating}.</p>`);
+      //   $("#monsterOutput12").click(function() { 
+      //     $("#xtra12").toggle();
+      //     $("#xtra0").hide();
+      //     $("#xtra1").hide();
+      //     $("#xtra2").hide();
+      //     $("#xtra3").hide();
+      //     $("#xtra4").hide();
+      //     $("#xtra5").hide();
+      //     $("#xtra6").hide();
+      //     $("#xtra7").hide();
+      //     $("#xtra8").hide();
+      //     $("#xtra9").hide();
+      //     $("#xtra10").hide();
+      //     $("#xtra11").hide();
+      //     $("#xtra13").hide();
+      //     $("#xtra14").hide();
+      //     $("#xtra12").html(`<span>${encounter.encounterArray[12].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[12].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[12].xp}XP.</span>`);
+      //   });
+      // }
+      // if ((`<p>${encounter.encounterArray[13].name}` !== "null")) {
+      //   $("#monsterOutput13").html(`<p>${encounter.encounterArray[13].name}</p>`);
+      //   if ((`<p>${encounter.encounterArray[13].challenge_rating}` !== "null"))
+      //     $("#crOutput13").html(`<p>${encounter.encounterArray[13].challenge_rating}.</p>`);
+      //   $("#monsterOutput13").click(function() { 
+      //     $("#xtra13").toggle();
+      //     $("#xtra0").hide();
+      //     $("#xtra1").hide();
+      //     $("#xtra2").hide();
+      //     $("#xtra3").hide();
+      //     $("#xtra4").hide();
+      //     $("#xtra5").hide();
+      //     $("#xtra6").hide();
+      //     $("#xtra7").hide();
+      //     $("#xtra8").hide();
+      //     $("#xtra9").hide();
+      //     $("#xtra10").hide();
+      //     $("#xtra11").hide();
+      //     $("#xtra12").hide();
+      //     $("#xtra14").hide();
+      //     $("#xtra13").html(`<span>${encounter.encounterArray[13].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[13].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[13].xp}XP.</span>`);
+      //   });
+      // }
+      // if ((`<p>${encounter.encounterArray[14].name}` !== "null")) {
+      //   $("#monsterOutput14").html(`<p>${encounter.encounterArray[14].name}</p>`);
+      //   if ((`<p>${encounter.encounterArray[14].challenge_rating}` !== "null"))
+      //     $("#crOutput14").html(`<p>${encounter.encounterArray[14].challenge_rating}.</p>`);
+      //   $("#monsterOutput14").click(function() { 
+      //     $("#xtra14").toggle();
+      //     $("#xtra0").hide();
+      //     $("#xtra1").hide();
+      //     $("#xtra2").hide();
+      //     $("#xtra3").hide();
+      //     $("#xtra4").hide();
+      //     $("#xtra5").hide();
+      //     $("#xtra6").hide();
+      //     $("#xtra7").hide();
+      //     $("#xtra8").hide();
+      //     $("#xtra9").hide();
+      //     $("#xtra10").hide();
+      //     $("#xtra11").hide();
+      //     $("#xtra12").hide();
+      //     $("#xtra13").hide();
+      //     $("#xtra14").html(`<span>${encounter.encounterArray[14].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[14].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[14].xp}XP.</span>`);
+      //   });
+      // }
     })();
     $('.reset').on('click', '#resetButton', function(event) {
       event.preventDefault();
