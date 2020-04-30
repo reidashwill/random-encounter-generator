@@ -151,14 +151,17 @@ select{
   margin: 0;
   color: rgb(0, 0, 0);
   letter-spacing: -1px;
+  word-spacing: 2px;
   font-weight: 700;
   text-shadow: 0px 0px 8px rgb(255, 249, 218), 0px 0px 8px #fff;
 }
 h4.speech {
   display: none;
-  margin:auto;
+  word-spacing: 2px;
+  margin: auto;
   opacity: 85%;
-  width: contain;
+  width: auto;
+  padding: 1%;
   white-space: nowrap;
   word-wrap: break-word;
   font-size: auto;
@@ -173,6 +176,7 @@ h4.speech {
   -moz-box-shadow: 2px 2px 4px #888;
   box-shadow: 2px 2px 4px #888;
   opacity: 90%;
+  box-sizing: border-box;
 }
 .typewriter p{
   display: inline-block;
@@ -264,7 +268,7 @@ h4.speech {
   background-color: rgb(95, 24, 24);
 }
 
-@media screen and (min-width: 200px) and (max-width: 1000px) {
+@media screen and (min-width: 200px) and (max-width: 1200px) {
 .resultContainer {
   background-image: url('https://i.imgur.com/nRzMcb8.png?1');
   background-position: center;
