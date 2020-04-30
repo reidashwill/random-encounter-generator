@@ -1,3 +1,4 @@
+import swal from 'sweetalert2';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -241,22 +242,9 @@ $(document).ready(function () {
         if ((`<p>${encounter.encounterArray[0].challenge_rating}` !== "null"))
           $("#crOutput0").html(`<p>${encounter.encounterArray[0].challenge_rating}.</p>`);
         $("#monsterOutput0").click(function() { 
-          $("#xtra0").toggle();
-          $("#xtra1").hide();
-          $("#xtra2").hide();
-          $("#xtra3").hide();
-          $("#xtra4").hide();
-          $("#xtra5").hide();
-          $("#xtra6").hide();
-          $("#xtra7").hide();
-          $("#xtra8").hide();
-          $("#xtra9").hide();
-          $("#xtra10").hide();
-          $("#xtra11").hide();
-          $("#xtra12").hide();
-          $("#xtra13").hide();
-          $("#xtra14").hide();
           $("#xtra0").html(`<span>${encounter.encounterArray[0].hit_points}HP.</span>` + " " + `<span>${encounter.encounterArray[0].strength}Str.</span>` + " " + `<span>${encounter.encounterArray[0].xp}XP.</span>`);
+          swal.fire($("#xtra0").show());
+          $("#xtra0").hide();
         });
       }
       if ((`<p>${encounter.encounterArray[1].name}` !== "null")) {
