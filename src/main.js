@@ -8,7 +8,7 @@ import { Encounter } from './../src/bizz.js';
 
 $(document).ready(function () {
 
-  //changes background image upon selection of environment
+  //changes background image upon selection of environment//
   $('#environment').change(function () {
     let selectedValue = ($(this).val());
     switch (selectedValue) {
@@ -50,6 +50,7 @@ $(document).ready(function () {
       break;
     }
   });
+  //add ambient sound effects to environments//
   let dice = new Audio('https://opengameart.org/sites/default/files/audio_preview/5%20dice%20rolling.ogg.mp3');
   let coast = new Audio('https://opengameart.org/sites/default/files/audio_preview/jasinski-wave-prev.ogg.mp3');
   let forest = new Audio('https://opengameart.org/sites/default/files/audio_preview/birds-isaiah658.ogg.mp3');
@@ -223,8 +224,8 @@ $(document).ready(function () {
     $(".reset").show();
     $(".jumbotron").fadeOut(200);
     $("#btn-place").fadeOut(200);
-    // let sound = new Audio('https://opengameart.org/sites/default/files/audio_preview/hs.mp3.ogg');
-    // sound.play();
+    let sound = new Audio('https://opengameart.org/sites/default/files/audio_preview/hs.mp3.ogg');
+    sound.play();
 
     (async () => {
       let encounter = new Encounter;
@@ -235,9 +236,15 @@ $(document).ready(function () {
       encounter.environment = $("#environment").val();
       encounter.partyXpThreshold(encounter.partyMembers, encounter.challengeDifficulty, encounter.partyLevel);
       await encounter.encounterGen();
-      console.log(encounter.encounterArray[0].name);
       $("#monsterOutput").html(`<p>${encounter.encounterArray[0].name}</p>`);
       $("#crOutput").html(`<p>${encounter.encounterArray[0].challenge_rating}.</p>`);
     })();
+    $('.reset').on('click', '#resetButton', function(event) {
+      event.preventDefault();
+      randomBg();
+      $(".resultContainer").hide();
+      $(".jumbotron").show();
+      document.getElementById('form-control').reset();
+    });
   });
 });
