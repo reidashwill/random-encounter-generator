@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random Encounter Generator</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="https://i.imgur.com/1XoOHM1.jpg/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/1XoOHM1.jpg/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://i.imgur.com/1XoOHM1.jpg/favicon-16x16.png">
+  <link rel="manifest" href="https://i.imgur.com/1XoOHM1.jpg/site.webmanifest">
+  <link rel="shortcut icon" href="https://i.imgur.com/1XoOHM1.jpg/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="https://i.imgur.com/1XoOHM1.jpg/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
   <div class="container">
@@ -11,7 +19,6 @@
       <form id="form-control">
         <h4>Please select your average party level.</h4>
         <select class="form-group" id="partyLevel">
-          <!-- <option>Random</option> -->
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -37,7 +44,6 @@
         <br>
         <h4>How many members in the party?</h4>
         <select class="form-group" id="partyMembers">
-          <!-- <option>Random</option> -->
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
@@ -47,7 +53,6 @@
         <br>
         <h4>How difficult do you want this encounter to be?</h4>
         <select class="form-group" id="challengeDifficulty">
-          <!-- <option>Random</option> -->
           <option value="0">Easy</option>
           <option value="1">Medium</option>
           <option value="2">Hard</option>
@@ -55,25 +60,6 @@
         </select>
         <br>
         <br>
-        <!-- <h4>What type of monster(s) will they face?</h4>
-        <select class="form-group" id="monsterType">
-          <option value="aberration">Aberrations</option>
-          <option value="beast">Beasts</option>
-          <option value="celestial">Celestials</option>
-          <option value="construct">Constructs</option>
-          <option value="dragon">Dragons</option>
-          <option value="elementals">Elementals</option>
-          <option value="fey">Fey</option>
-          <option value="fiends">Fiends</option>
-          <option value="giants">Giants</option>
-          <option value="humanoids">Humanoids</option>
-          <option value="monstrosities">Monstrosities</option>
-          <option value="oozes">Oozes</option>
-          <option value="plants">Plants</option>
-          <option value="undead">Undead</option>
-        </select> -->
-        <!-- <br>
-        <br> -->
         <h4>What environment are your players in?</h4>
         <select class="form-group" id="environment" name="environment">
           <option value="random">Random</option>
@@ -99,64 +85,64 @@
         <div class="results">
           <div class="typewriter">
             <h1 class="printOff">Your Encounter Details</h1>
-            <!-- <h4 class="monName">Monster Name &ensp; <span class="CR">Challege rating</span></h4> -->
             <div id="output">
               <div class="row">
                 <div class="col-md-3">
                 </div>
                 <div  class="col-md-3">
-                  <h5>Monster Name</h5>
-                  <h4 id="monsterOutput0"></h4>
-                  <h4 class="speech" id="xtra0"></h4>
-                  <h4 id="monsterOutput1"></h4>
-                  <h4 class="speech" id="xtra1"></h4>
-                  <h4 id="monsterOutput2"></h4>
-                  <h4 class="speech" id="xtra2"></h4>
-                  <h4 id="monsterOutput3"></h4>
-                  <h4 class="speech" id="xtra3"></h4>
-                  <h4 id="monsterOutput4"></h4>
-                  <h4 class="speech" id="xtra4"></h4>
-                  <h4 id="monsterOutput5"></h4>
-                  <h4 class="speech" id="xtra5"></h4>
-                  <h4 id="monsterOutput6"></h4>
-                  <h4 class="speech" id="xtra6"></h4>
-                  <h4 id="monsterOutput7"></h4>
-                  <h4 class="speech" id="xtra7"></h4>
-                  <h4 id="monsterOutput8"></h4>
-                  <h4 class="speech" id="xtra8"></h4>
-                  <h4 id="monsterOutput9"></h4>
-                  <h4 class="speech" id="xtra9"></h4>
-                  <h4 id="monsterOutput10"></h4>
-                  <h4 class="speech" id="xtra10"></h4>
-                </div >
-                <div class="col-md-3">
-                  <h5 id="cr">Challenge Rating</h5>
-                  <h4 id="crOutput0"></h4>
-                  <h4 id="crOutput1"></h4>
-                  <h4 id="crOutput2"></h4>
-                  <h4 id="crOutput3"></h4>
-                  <h4 id="crOutput4"></h4>
-                  <h4 id="crOutput5"></h4>
-                  <h4 id="crOutput6"></h4>
-                  <h4 id="crOutput7"></h4>
-                  <h4 id="crOutput8"></h4>
-                  <h4 id="crOutput9"></h4>
-                  <h4 id="crOutput10"></h4>
-                </div>
-                <div class="col-md-3"></div>
+                  <form id="resultName">
+                    <h5>Monster Name</h5>
+                    <h4 id="monsterOutput0"></h4>
+                    <h4 class="speech" id="xtra0"></h4>
+                    <h4 id="monsterOutput1"></h4>
+                    <h4 class="speech" id="xtra1"></h4>
+                    <h4 id="monsterOutput2"></h4>
+                    <h4 class="speech" id="xtra2"></h4>
+                    <h4 id="monsterOutput3"></h4>
+                    <h4 class="speech" id="xtra3"></h4>
+                    <h4 id="monsterOutput4"></h4>
+                    <h4 class="speech" id="xtra4"></h4>
+                    <h4 id="monsterOutput5"></h4>
+                    <h4 class="speech" id="xtra5"></h4>
+                    <h4 id="monsterOutput6"></h4>
+                    <h4 class="speech" id="xtra6"></h4>
+                    <h4 id="monsterOutput7"></h4>
+                    <h4 class="speech" id="xtra7"></h4>
+                    <h4 id="monsterOutput8"></h4>
+                    <h4 class="speech" id="xtra8"></h4>
+                    <h4 id="monsterOutput9"></h4>
+                    <h4 class="speech" id="xtra9"></h4>
+                    <h4 id="monsterOutput10"></h4>
+                    <h4 class="speech" id="xtra10"></h4>
+                  </div >
+                  <div class="col-md-3">
+                    <h5 id="cr">Challenge Rating</h5>
+                    <h4 id="crOutput0"></h4>
+                    <h4 id="crOutput1"></h4>
+                    <h4 id="crOutput2"></h4>
+                    <h4 id="crOutput3"></h4>
+                    <h4 id="crOutput4"></h4>
+                    <h4 id="crOutput5"></h4>
+                    <h4 id="crOutput6"></h4>
+                    <h4 id="crOutput7"></h4>
+                    <h4 id="crOutput8"></h4>
+                    <h4 id="crOutput9"></h4>
+                    <h4 id="crOutput10"></h4>
+                  </div>
+                  <div class="col-md-3"></div>
+                  </form>
                 </br>
               </div>
             </div>
           </div>
-          <!-- Button changed to bounceInUp -->
           <div class="reset animated bounceInUp">
-            <button class="btn animated bounceInUp" id="resetButton">Try Again</button> 
+            <button onclick="(window.location.reload(false))" class="btn animated bounceInUp" id="resetButton">Try Again</button> 
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="music">
+    <div class="music">
     <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809321608&auto_play=true"></iframe>
-    </div> -->
+    </div>
   </body>
 </html>
